@@ -16,6 +16,8 @@
       item.cdn_url_preview ||
       (isFullImageUrl(item.cdn_url) ? item.cdn_url : null);
     if (full) return full;
+    // relative local path (draft / offline sample frames)
+    if (item.cdn_url && /^(?:\.\.?\/)?(?:assets\/|data\/)/i.test(item.cdn_url)) return item.cdn_url;
     if (/^data:|^blob:/.test(item.cdn_url || "")) return item.cdn_url;
 
     var w = item.w || 1600;

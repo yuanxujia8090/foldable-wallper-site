@@ -19,7 +19,9 @@
       "h": 900,
       "created_at": "2026-10-12",
       "status": "published",
-      "batch_id": "2026-10-28-a"
+      "batch_id": "2026-10-28-a",
+      "cdn_url_full": "assets/mvp1_mock-llm-01.png",
+      "cdn_url_preview": "assets/mvp1_mock-llm-01.png"
     },
     {
       "id": "wp-188",
@@ -39,7 +41,9 @@
       "h": 1600,
       "created_at": "2026-10-12",
       "status": "published",
-      "batch_id": "2026-10-28-a"
+      "batch_id": "2026-10-28-a",
+      "cdn_url_full": "assets/mvp1_mock-llm-02.png",
+      "cdn_url_preview": "assets/mvp1_mock-llm-02.png"
     },
     {
       "id": "wp-322",

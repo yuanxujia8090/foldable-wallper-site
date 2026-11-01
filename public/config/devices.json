@@ -1,0 +1,26 @@
+{
+  "hot_devices": [
+    {
+      "id": "iphone",
+      "label": "iPhone",
+      "device_tags": [
+        "iphone"
+      ]
+    },
+    {
+      "id": "pixel",
+      "label": "Pixel",
+      "device_tags": [
+        "pixel"
+      ]
+    },
+    {
+      "id": "foldable",
+      "label": "Fold",
+      "device_tags": [
+        "foldable"
+      ]
+    }
+  ],
+  "notes": "V1 hot chips; filter by device_tags overlap. No true-device bezel preview in V1."
+}

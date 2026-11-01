@@ -1,0 +1,471 @@
+{
+  "generated_at": "2026-10-29T10:00:00+08:00",
+  "batch_id": "2026-10-28-a",
+  "items": [
+    {
+      "id": "wp-1029",
+      "title": "Park towers haze",
+      "cdn_url": "https://picsum.photos/id/1029",
+      "ratio": "desktop",
+      "style": "nature",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "city",
+        "haze"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-12",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-188",
+      "title": "Snow rooftops",
+      "cdn_url": "https://picsum.photos/id/188",
+      "ratio": "phone-portrait",
+      "style": "minimal",
+      "device_tags": [
+        "iphone",
+        "pixel"
+      ],
+      "tags": [
+        "snow",
+        "roof"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-12",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-322",
+      "title": "Ochre alley",
+      "cdn_url": "https://picsum.photos/id/322",
+      "ratio": "phone-portrait",
+      "style": "dark",
+      "device_tags": [
+        "iphone"
+      ],
+      "tags": [
+        "alley"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-14",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-868",
+      "title": "Skyline fade",
+      "cdn_url": "https://picsum.photos/id/868",
+      "ratio": "foldable",
+      "style": "minimal",
+      "device_tags": [
+        "foldable",
+        "pixel"
+      ],
+      "tags": [
+        "skyline"
+      ],
+      "w": 1200,
+      "h": 1000,
+      "created_at": "2026-10-14",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-299",
+      "title": "Brick canyon",
+      "cdn_url": "https://picsum.photos/id/299",
+      "ratio": "phone-portrait",
+      "style": "dark",
+      "device_tags": [
+        "pixel",
+        "iphone"
+      ],
+      "tags": [
+        "brick"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-15",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-288",
+      "title": "Waterfront pastels",
+      "cdn_url": "https://picsum.photos/id/288",
+      "ratio": "desktop",
+      "style": "nature",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "water"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-15",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-344",
+      "title": "Gold water glass",
+      "cdn_url": "https://picsum.photos/id/344",
+      "ratio": "desktop",
+      "style": "abstract",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "gold",
+        "glass"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-16",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-49",
+      "title": "Windmill white",
+      "cdn_url": "https://picsum.photos/id/49",
+      "ratio": "phone-portrait",
+      "style": "minimal",
+      "device_tags": [
+        "iphone"
+      ],
+      "tags": [
+        "windmill"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-16",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1015",
+      "title": "Fog ridge",
+      "cdn_url": "https://picsum.photos/id/1015",
+      "ratio": "phone-portrait",
+      "style": "nature",
+      "device_tags": [
+        "iphone",
+        "pixel"
+      ],
+      "tags": [
+        "fog"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-18",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1016",
+      "title": "Sea cliffs",
+      "cdn_url": "https://picsum.photos/id/1016",
+      "ratio": "desktop",
+      "style": "nature",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "sea",
+        "cliff"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-18",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1018",
+      "title": "Night rails",
+      "cdn_url": "https://picsum.photos/id/1018",
+      "ratio": "phone-portrait",
+      "style": "dark",
+      "device_tags": [
+        "pixel"
+      ],
+      "tags": [
+        "night",
+        "rail"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-19",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1019",
+      "title": "Forest mist",
+      "cdn_url": "https://picsum.photos/id/1019",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "forest"
+      ],
+      "w": 1200,
+      "h": 1000,
+      "created_at": "2026-10-19",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1036",
+      "title": "Pier lights",
+      "cdn_url": "https://picsum.photos/id/1036",
+      "ratio": "desktop",
+      "style": "dark",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "pier"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-20",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1040",
+      "title": "Mountain shelf",
+      "cdn_url": "https://picsum.photos/id/1040",
+      "ratio": "phone-portrait",
+      "style": "minimal",
+      "device_tags": [
+        "iphone"
+      ],
+      "tags": [
+        "mountain"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-20",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1043",
+      "title": "River bend",
+      "cdn_url": "https://picsum.photos/id/1043",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable",
+        "iphone"
+      ],
+      "tags": [
+        "river"
+      ],
+      "w": 1200,
+      "h": 1000,
+      "created_at": "2026-10-21",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1044",
+      "title": "Soft dunes",
+      "cdn_url": "https://picsum.photos/id/1044",
+      "ratio": "phone-portrait",
+      "style": "abstract",
+      "device_tags": [
+        "pixel"
+      ],
+      "tags": [
+        "dune"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-21",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1050",
+      "title": "Blue hour bay",
+      "cdn_url": "https://picsum.photos/id/1050",
+      "ratio": "desktop",
+      "style": "dark",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "bay"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-22",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1060",
+      "title": "Stone path",
+      "cdn_url": "https://picsum.photos/id/1060",
+      "ratio": "phone-portrait",
+      "style": "minimal",
+      "device_tags": [
+        "iphone",
+        "pixel"
+      ],
+      "tags": [
+        "path"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-22",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1074",
+      "title": "Glass atrium",
+      "cdn_url": "https://picsum.photos/id/1074",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "glass"
+      ],
+      "w": 1200,
+      "h": 1000,
+      "created_at": "2026-10-24",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1080",
+      "title": "Valley road",
+      "cdn_url": "https://picsum.photos/id/1080",
+      "ratio": "desktop",
+      "style": "nature",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "valley"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-24",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-1084",
+      "title": "Quiet harbour",
+      "cdn_url": "https://picsum.photos/id/1084",
+      "ratio": "phone-portrait",
+      "style": "dark",
+      "device_tags": [
+        "iphone"
+      ],
+      "tags": [
+        "harbour"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-25",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-110",
+      "title": "Wheat field",
+      "cdn_url": "https://picsum.photos/id/110",
+      "ratio": "desktop",
+      "style": "nature",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "wheat"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-25",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-129",
+      "title": "Concrete fold",
+      "cdn_url": "https://picsum.photos/id/129",
+      "ratio": "foldable",
+      "style": "minimal",
+      "device_tags": [
+        "foldable",
+        "pixel"
+      ],
+      "tags": [
+        "concrete"
+      ],
+      "w": 1200,
+      "h": 1000,
+      "created_at": "2026-10-26",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-137",
+      "title": "Ink geometry",
+      "cdn_url": "https://picsum.photos/id/137",
+      "ratio": "phone-portrait",
+      "style": "abstract",
+      "device_tags": [
+        "iphone",
+        "pixel"
+      ],
+      "tags": [
+        "ink",
+        "geometry"
+      ],
+      "w": 900,
+      "h": 1600,
+      "created_at": "2026-10-26",
+      "status": "published",
+      "batch_id": "2026-10-28-a"
+    },
+    {
+      "id": "wp-draft",
+      "title": "Draft (unlisted sample)",
+      "cdn_url": "https://picsum.photos/id/999",
+      "ratio": "desktop",
+      "style": "minimal",
+      "device_tags": [
+        "desktop"
+      ],
+      "tags": [
+        "draft"
+      ],
+      "w": 1600,
+      "h": 900,
+      "created_at": "2026-10-29",
+      "status": "unlisted",
+      "batch_id": "2026-10-28-a",
+      "object_key": ""
+    }
+  ]
+}

@@ -10,7 +10,51 @@
     return false;
   }
 
+  function smallSource(item, kind) {
+    var img = item && item.img;
+    if (!img || typeof img !== "object") return "";
+    var url = kind === "strip" ? (img.strip || img.thumb) : (img.thumb || img.strip);
+    if (typeof url !== "string") return "";
+    return url.trim();
+  }
+
+  function pathExtension(value) {
+    var path = String(value || "").split(/[?#]/)[0];
+    var cut = Math.max(path.lastIndexOf("/"), path.lastIndexOf("\\"));
+    var base = cut >= 0 ? path.slice(cut + 1) : path;
+    var dot = base.lastIndexOf(".");
+    if (dot <= 0) return "";
+    var ext = base.slice(dot + 1).toLowerCase();
+    return /^[a-z0-9]+$/.test(ext) ? ext : "";
+  }
+
+  function declaredMatch(name, ext) {
+    if (typeof name !== "string" || /[\u0000-\u001f\u007f]/.test(name)) return "";
+    var trimmed = name.trim();
+    if (!/^[A-Za-z0-9][A-Za-z0-9._-]*\.(webp|png|jpg|jpeg)$/i.test(trimmed)) return "";
+    if (pathExtension(trimmed) !== ext) return "";
+    return trimmed;
+  }
+
+  function safeStem(id) {
+    var stem = String(id == null ? "" : id).replace(/[^A-Za-z0-9._-]+/g, "");
+    if (!stem || stem === "." || stem === "..") return "wallpaper";
+    return stem;
+  }
+
+  function downloadName(item, url) {
+    var ext = pathExtension(url);
+    var known = ext === "webp" || ext === "png" || ext === "jpg" || ext === "jpeg";
+    var declared = known ? declaredMatch(item && item.download_filename, ext) : "";
+    if (declared) return declared;
+    return safeStem(item && item.id) + "." + (known ? ext : "jpg");
+  }
+
   function src(item, kind) {
+    if (kind === "thumb" || kind === "strip") {
+      var small = smallSource(item, kind);
+      if (small) return small;
+    }
     var full =
       item.cdn_url_full ||
       item.cdn_url_preview ||
@@ -70,6 +114,7 @@
   }
 
   global.T9_src = src;
+  global.T9_downloadName = downloadName;
   global.T9_loadManifest = loadManifest;
   global.T9_loadDevices = loadDevices;
   global.T9_publishedOnly = publishedOnly;

@@ -1001,7 +1001,7 @@ h1, h2, h3 {
 
   function openLightbox(item) {
     var fullUrl = src(item, "full");
-    var filename = item.id + (/\.png(\?|#|$)/i.test(fullUrl) ? ".png" : ".jpg");
+    var filename = window.T9_downloadName(item, fullUrl);
     document.getElementById("lbImg").src = fullUrl;
     document.getElementById("lbImg").alt = item.title;
     document.getElementById("lbTitle").textContent = item.title;

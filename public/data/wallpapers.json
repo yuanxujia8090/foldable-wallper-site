@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-29T10:00:00+08:00",
-  "batch_id": "2026-10-28-a",
+  "generated_at": "2026-11-09T17:15:34.695128+08:00",
+  "batch_id": "remote25-plus-local30-20261109",
   "items": [
     {
       "id": "wp-1029",
@@ -470,6 +470,876 @@
       "status": "unlisted",
       "batch_id": "2026-10-28-a",
       "object_key": ""
+    },
+    {
+      "id": "mist-01",
+      "title": "Mist Mountains — interpolation viewing sample",
+      "cdn_url": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "mist mountains",
+        "interpolation viewing sample"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-01.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-thumb.webp",
+        "strip": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-thumb.webp",
+        "preview": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-01",
+      "title": "Obsidian Facets — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-01/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Obsidian Facets"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-01.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-01/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-01/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-01/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-01/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-01/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-01/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-02",
+      "title": "Azurite Veins — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-02/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Azurite Veins"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-02.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-02/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-02/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-02/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-02/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-02/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-02/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-03",
+      "title": "Graphite Folds — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-03/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Graphite Folds"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-03.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-03/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-03/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-03/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-03/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-03/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-03/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-04",
+      "title": "Hematite Veins — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-04/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Hematite Veins"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-04.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-04/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-04/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-04/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-04/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-04/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-04/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-05",
+      "title": "Silver Crystals — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-05/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Silver Crystals"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-05.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-05/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-05/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-05/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-05/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-05/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-05/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-06",
+      "title": "Deep Green Strata — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-06/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Deep Green Strata"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-06.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-06/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-06/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-06/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-06/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-06/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-06/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-07",
+      "title": "Basalt Lines — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-07/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Basalt Lines"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-07.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-07/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-07/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-07/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-07/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-07/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-07/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-08",
+      "title": "Dark Gold Veins — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-08/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Dark Gold Veins"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-08.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-08/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-08/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-08/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-08/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-08/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-08/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-09",
+      "title": "Amethyst Facets — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-09/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Amethyst Facets"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-09.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-09/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-09/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-09/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-09/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-09/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-09/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mineral-10",
+      "title": "Stone Glimmer — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-10/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "dark",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Dark Mineral",
+        "Stone Glimmer"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mineral-10.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-10/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-10/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-10/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-10/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-10/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mineral-10/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-02",
+      "title": "Mountains through Clouds — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-02/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Mountains through Clouds"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-02.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-02/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-02/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-02/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-02/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-02/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-02/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-03",
+      "title": "Pines in Mist — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-03/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Pines in Mist"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-03.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-03/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-03/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-03/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-03/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-03/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-03/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-04",
+      "title": "Dawn Snow Ridge — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-04/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Dawn Snow Ridge"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-04.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-04/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-04/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-04/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-04/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-04/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-04/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-05",
+      "title": "Moonlit Ridge — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-05/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Moonlit Ridge"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-05.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-05/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-05/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-05/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-05/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-05/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-05/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-06",
+      "title": "Rain-washed Hills — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-06/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Rain-washed Hills"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-06.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-06/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-06/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-06/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-06/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-06/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-06/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-07",
+      "title": "Cloud-sea Island — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-07/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Cloud-sea Island"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-07.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-07/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-07/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-07/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-07/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-07/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-07/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-08",
+      "title": "Distant Mountain Stream — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-08/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Distant Mountain Stream"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-08.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-08/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-08/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-08/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-08/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-08/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-08/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-09",
+      "title": "Misty Stone Shore — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-09/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Misty Stone Shore"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-09.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-09/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-09/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-09/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-09/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-09/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-09/hd-q95.webp"
+      }
+    },
+    {
+      "id": "mist-10",
+      "title": "Twilight Summit — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-10/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "nature",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Mist Mountains",
+        "Twilight Summit"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "mist-10.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-10/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-10/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-10/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-10/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-10/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/mist-10/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-01",
+      "title": "Teal Waves — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-01/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Teal Waves"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-01.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-01/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-01/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-01/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-01/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-01/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-01/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-02",
+      "title": "Coral Rings — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-02/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Coral Rings"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-02.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-02/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-02/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-02/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-02/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-02/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-02/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-03",
+      "title": "Indigo Canyon — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-03/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Indigo Canyon"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-03.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-03/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-03/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-03/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-03/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-03/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-03/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-04",
+      "title": "Cream Fan — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-04/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Cream Fan"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-04.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-04/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-04/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-04/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-04/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-04/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-04/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-05",
+      "title": "Sunset Curves — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-05/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Sunset Curves"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-05.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-05/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-05/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-05/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-05/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-05/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-05/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-06",
+      "title": "Mint Steps — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-06/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Mint Steps"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-06.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-06/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-06/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-06/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-06/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-06/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-06/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-07",
+      "title": "Sand Arcs — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-07/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Sand Arcs"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-07.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-07/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-07/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-07/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-07/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-07/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-07/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-08",
+      "title": "Blue White Passage — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-08/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Blue White Passage"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-08.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-08/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-08/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-08/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-08/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-08/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-08/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-09",
+      "title": "Peach Ripples — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-09/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Peach Ripples"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-09.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-09/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-09/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-09/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-09/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-09/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-09/hd-q95.webp"
+      }
+    },
+    {
+      "id": "paper-10",
+      "title": "Sea Paper Valley — iPhone Duo wallpaper",
+      "cdn_url": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-10/hd-q95.webp",
+      "ratio": "foldable",
+      "style": "abstract",
+      "device_tags": [
+        "foldable"
+      ],
+      "tags": [
+        "iPhone Duo wallpaper",
+        "Paper Layers",
+        "Sea Paper Valley"
+      ],
+      "w": 5340,
+      "h": 3756,
+      "created_at": "2026-11-07",
+      "status": "published",
+      "batch_id": "iphone-duo-local30-20261107",
+      "download_filename": "paper-10.webp",
+      "cdn_url_preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-10/hd-q95.webp",
+      "cdn_url_full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-10/hd-q95.webp",
+      "img": {
+        "thumb": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-10/thumb.webp",
+        "strip": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-10/thumb.webp",
+        "preview": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-10/hd-q95.webp",
+        "full": "https://img.unfoldpaper.com/wallpapers/20261108/a47f5101124d4386bf7b8b0dcaf7f308/paper-10/hd-q95.webp"
+      }
     }
   ]
 }

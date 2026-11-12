@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-load-error="这一批没能加载。请用 http 方式打开（python -m http.server）。">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Batch Light — 手机、桌面与折叠屏壁纸</title>
+<meta name="description" content="一批手机、桌面与折叠屏壁纸：在接触印样里搜索，点开一张，下载同一份文件。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
+<style>
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --ink: #f2f2f2;
+  --muted: #8a8a8a;
+  --accent: #e8b86d;
+  --accent-ink: #0a0a0a;
+  --font-display: "Hanken Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --font-text: "Hanken Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --margin: clamp(1rem, 2.2vw, 2rem);
+  --gutter: clamp(0.75rem, 1.5vw, 1.25rem);
+  --section: clamp(5rem, 10vw, 10rem);
+  --radius: 0px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-hover: 180ms;
+  --t-ui: 240ms;
+  --t-reveal: 800ms;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+  scrollbar-gutter: stable;
+}
+body {
+  margin: 0;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--step-body);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; background: var(--surface); }
+button, input { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+.wrap { padding-inline: var(--margin); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.05em; margin: 0; text-wrap: balance; }
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] h2,
+html[lang="zh-Hans"] h3 { letter-spacing: -0.02em; }
+.muted { color: var(--muted); }
+.small { font-size: var(--step-small); line-height: 1.45; }
+
+/* —— Hero: lit strip, four corners —— */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--bg);
+}
+.hero-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px 32px;
+  align-items: start;
+  padding: 36px var(--margin) 12px;
+  z-index: 2;
+}
+.hero-top h1 {
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  margin: 0;
+  max-width: 12ch;
+}
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 8px 18px;
+}
+.lang-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  font-size: var(--step-small);
+  font-weight: 500;
+}
+.lang-switch a { color: var(--muted); }
+.lang-switch a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.hero-top .about-link {
+  font-size: var(--step-small);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.edge-close {
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+}
+.hero-support {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  max-width: 36ch;
+  font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+  line-height: 1.35;
+  color: var(--ink);
+  font-weight: 400;
+}
+.hero-strip-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  gap: 12px;
+}
+.hero-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 42vh;
+  min-height: 280px;
+  max-height: 420px;
+  padding-inline: var(--margin);
+  scroll-padding-inline: var(--margin);
+  cursor: grab;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.hero-strip::-webkit-scrollbar { display: none; }
+.hero-strip.is-dragging { cursor: grabbing; }
+.hero-strip figure {
+  flex: 0 0 auto;
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: center;
+  filter: brightness(0.55);
+  transition: filter var(--t-hover) var(--ease-out), transform var(--t-hover) var(--ease-out);
+  cursor: pointer;
+}
+.hero-strip figure.is-lit,
+.hero-strip figure:hover { filter: brightness(1); }
+.hero-strip figure.is-lit img {
+  animation: strip-breathe 12s var(--ease-out) infinite alternate;
+}
+@keyframes strip-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
+}
+.hero-strip img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+.hero-strip-caption {
+  padding-inline: var(--margin);
+  font-size: var(--step-small);
+  font-weight: 500;
+  min-height: 1.4em;
+  color: var(--ink);
+}
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 0 var(--margin) 44px;
+  font-size: var(--step-small);
+  font-weight: 500;
+}
+.hero-bottom p { margin: 0; max-width: 36ch; color: var(--muted); font-size: var(--step-body); font-weight: 400; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 500;
+  font-size: var(--step-small);
+  letter-spacing: -0.01em;
+  transition: opacity var(--t-hover) var(--ease-out), transform 140ms var(--ease-out);
+}
+.btn:hover { opacity: 0.92; }
+.btn:active { transform: translateY(1px); }
+.btn-ghost {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+@media (max-width: 47.9em) {
+  .hero-strip { height: 46vh; max-height: none; }
+  .hero-top { grid-template-columns: 1fr; }
+  .hero-links { justify-content: flex-start; }
+  .hero-bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
+  .hero-bottom p { flex: 1 1 100%; margin-bottom: 12px; }
+  .hero-bottom .btn { margin-left: auto; }
+}
+
+/* —— Filters / sheet —— */
+.filters {
+  padding: 120px var(--margin) 24px;
+  background: var(--bg);
+  margin-top: 48px;
+}
+.filters h2 {
+  font-size: var(--step-head);
+  line-height: 0.95;
+  margin-bottom: 28px;
+  max-width: 16ch;
+}
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.filter-label {
+  font-size: var(--step-small);
+  color: var(--muted);
+  min-width: 4.5rem;
+}
+.search {
+  flex: 1 1 220px;
+  min-height: 44px;
+  padding: 0 14px;
+  background: var(--surface);
+  border: 0;
+  color: var(--ink);
+  font-size: var(--step-body);
+}
+.search::placeholder { color: var(--muted); }
+.chip {
+  min-height: 40px;
+  padding: 0 14px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: var(--step-small);
+  font-weight: 500;
+  transition: background var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out);
+}
+.chip[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--bg);
+}
+.chip:hover { color: var(--ink); }
+.facets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+  margin-top: 8px;
+}
+@media (max-width: 47.9em) {
+  .facets { grid-template-columns: 1fr; }
+}
+.facet-group { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.count-line {
+  margin-top: 20px;
+  font-size: var(--step-small);
+  color: var(--muted);
+}
+
+/* Contact sheet */
+.sheet {
+  padding: 8px var(--margin) 80px;
+}
+.sheet-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+.sheet-grid::after {
+  content: "";
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 0;
+}
+.frame {
+  flex: 0 0 auto;
+  margin: 0;
+  height: 120px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity var(--t-hover) var(--ease-out), transform 250ms var(--ease-out);
+}
+.frame img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+.frame:hover { transform: scale(1.04); z-index: 1; }
+.frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sheet.is-dimming .frame:not(:hover):not(:focus-visible) { opacity: 0.35; }
+.empty {
+  padding: 64px 0;
+  font-size: var(--step-lead);
+  color: var(--muted);
+  max-width: 28ch;
+}
+
+/* Gallery strip — small frames wide space */
+.quiet-strip {
+  min-height: 80svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 0;
+  position: relative;
+}
+.quiet-strip .strip-title {
+  padding-inline: var(--margin);
+  font-size: var(--step-lead);
+  font-weight: 500;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.quiet-row {
+  display: flex;
+  gap: 5vw;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-inline: var(--margin);
+  scroll-snap-type: x proximity;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.quiet-row::-webkit-scrollbar { display: none; }
+.quiet-row figure {
+  flex: 0 0 11vw;
+  min-width: 100px;
+  aspect-ratio: 2 / 3;
+  margin: 0;
+  scroll-snap-align: start;
+  transition: transform 250ms var(--ease-out);
+  cursor: pointer;
+}
+.quiet-row figure:hover { transform: scale(1.1); }
+.quiet-row img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 47.9em) {
+  .quiet-row figure { flex-basis: 34vw; }
+}
+
+/* Showcase — one lifted */
+.showcase {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(0, 3fr);
+  gap: var(--gutter);
+  padding: var(--section) var(--margin);
+}
+.showcase-meta h2 { font-size: clamp(1.5rem, 2vw, 1.75rem); margin-bottom: 12px; }
+.showcase-meta a { font-size: var(--step-small); text-decoration: underline; text-underline-offset: 3px; }
+.showcase-note {
+  margin-top: 80px;
+  font-size: var(--step-small);
+  color: var(--muted);
+  max-width: 28ch;
+}
+.showcase-run {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.showcase-run::-webkit-scrollbar { display: none; }
+.showcase-run figure {
+  flex: 0 0 auto;
+  margin: 0;
+  height: 30vh;
+  min-height: 160px;
+  cursor: pointer;
+}
+.showcase-run figure.is-lifted { height: calc(30vh * 2.2); min-height: 280px; }
+.showcase-run img { height: 100%; width: auto; object-fit: cover; }
+.frame-cap {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  padding-inline: 4px;
+  font-size: var(--step-small);
+  color: var(--muted);
+  max-width: 100%;
+}
+.frame-cap span:last-child { flex: 0 0 auto; padding-right: 4px; }
+@media (max-width: 47.9em) {
+  .showcase { grid-template-columns: 1fr; }
+  .showcase-run figure { height: 34vw; min-height: 120px; }
+  .showcase-run figure.is-lifted { height: auto; width: 100%; min-height: 0; }
+  .showcase-run figure.is-lifted img { width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; }
+}
+
+/* About */
+.about {
+  padding: 140px var(--margin) 80px;
+  display: grid;
+  grid-template-columns: minmax(100px, 1.5fr) minmax(0, 10.5fr);
+  gap: var(--gutter);
+}
+.about-facts {
+  font-size: var(--step-small);
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.about h2 {
+  font-size: var(--step-lead);
+  margin: 0 0 20px;
+  letter-spacing: -0.03em;
+}
+.about-body {
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 48ch;
+  color: var(--ink);
+}
+.about-body .portrait {
+  float: left;
+  width: 3.6em;
+  height: 3.6em;
+  object-fit: cover;
+  margin: 0 0.5em 0.15em 0;
+}
+.about-body.soft { color: var(--muted); }
+.about-body + .about-body { margin-top: 1.2em; clear: both; }
+@media (max-width: 47.9em) {
+  .about { grid-template-columns: 1fr; padding: 80px var(--margin); }
+  .about-facts { order: 2; flex-direction: row; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+  .about-body { font-size: 1.25rem; }
+  .about-body .portrait { width: 110px; height: 110px; }
+}
+
+/* Footer */
+.footer-space { height: 12svh; }
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 var(--margin) 30px;
+  font-size: var(--step-small);
+  gap: 16px;
+}
+.footer .left { color: var(--muted); }
+.footer .centre { display: flex; gap: 24px; justify-content: center; }
+.footer .right { text-align: right; color: var(--muted); }
+@media (max-width: 47.9em) {
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-bottom: 24px;
+  }
+  .footer .centre { justify-content: flex-start; flex-wrap: wrap; gap: 16px; }
+  .footer .right { text-align: left; }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(10, 10, 10, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--margin);
+}
+.lightbox.is-open { display: flex; }
+.lightbox-panel {
+  background: var(--surface);
+  width: min(960px, 100%);
+  max-height: calc(100svh - 2 * var(--margin));
+  overflow: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.8fr);
+}
+.lightbox-panel img {
+  width: 100%;
+  height: auto;
+  max-height: 80svh;
+  object-fit: contain;
+  background: #000;
+}
+.lightbox-side {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.lightbox-side h2 {
+  font-size: var(--step-lead);
+  letter-spacing: -0.03em;
+}
+.attrs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--step-small);
+  color: var(--muted);
+}
+.attrs strong { color: var(--ink); font-weight: 500; }
+.lightbox-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  min-height: 44px;
+  min-width: 44px;
+  color: var(--ink);
+  font-size: var(--step-body);
+  background: var(--surface);
+  padding: 0 14px;
+}
+@media (max-width: 47.9em) {
+  .lightbox-panel { grid-template-columns: 1fr; }
+}
+
+/* Motion entrances — only when JS is present, so content stays readable without it */
+.reveal.is-in { opacity: 1; transform: none; }
+.reveal.is-in .rise {
+  opacity: 1;
+  transform: none;
+}
+.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--t-reveal) var(--ease-out), transform var(--t-reveal) var(--ease-out);
+}
+.js .rise {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+.rise:nth-child(1) { transition-delay: 0ms; }
+.rise:nth-child(2) { transition-delay: 70ms; }
+.rise:nth-child(3) { transition-delay: 140ms; }
+.rise:nth-child(4) { transition-delay: 210ms; }
+.rise:nth-child(5) { transition-delay: 280ms; }
+.rise:nth-child(6) { transition-delay: 350ms; }
+.rise:nth-child(7) { transition-delay: 420ms; }
+.rise:nth-child(8) { transition-delay: 490ms; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .rise { opacity: 1; transform: none; transition: none; }
+  .hero-strip figure,
+  .hero-strip figure.is-lit img,
+  .frame,
+  .quiet-row figure,
+  .btn,
+  .chip { transition: none !important; animation: none !important; }
+  .frame:hover,
+  .quiet-row figure:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#sheet">跳到壁纸</a>
+
+<header class="hero" id="top">
+  <div class="hero-top">
+    <h1>Batch Light</h1>
+    <div class="hero-links">
+      <nav class="lang-switch" aria-label="语言"><a href="/" hreflang="en" lang="en">English</a>
+        <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">简体中文</a></nav>
+      <a class="about-link" href="#about">关于</a>
+    </div>
+    <p class="hero-support">手机、桌面与折叠屏壁纸，同一批暗室印样。</p>
+  </div>
+  <div class="hero-strip-wrap">
+    <div class="hero-strip" id="heroStrip" tabindex="0" aria-label="精选壁纸，可左右拖动">
+<figure data-id="wp-1029"><img src="https://picsum.photos/id/1029/480/270" alt="薄雾中的公园与高楼" width="480" height="340"></figure><figure data-id="wp-188"><img src="https://picsum.photos/id/188/220/390" alt="积雪覆盖的屋顶" width="191" height="340"></figure><figure data-id="wp-322"><img src="https://picsum.photos/id/322/220/390" alt="赭黄色墙面夹出的窄巷" width="191" height="340"></figure><figure data-id="wp-868"><img src="https://picsum.photos/id/868/320/266" alt="渐渐隐去的天际线" width="320" height="340" loading="lazy"></figure><figure data-id="wp-299" class="is-lit"><img src="https://picsum.photos/id/299/220/390" alt="砖墙夹出的一条窄道" width="191" height="340" loading="lazy"></figure><figure data-id="wp-288"><img src="https://picsum.photos/id/288/480/270" alt="水岸边的柔和粉彩色调" width="480" height="340" loading="lazy"></figure><figure data-id="wp-344"><img src="https://picsum.photos/id/344/480/270" alt="金色水面与玻璃质感的光影" width="480" height="340" loading="lazy"></figure><figure data-id="wp-49"><img src="https://picsum.photos/id/49/220/390" alt="白色的风车" width="191" height="340" loading="lazy"></figure><figure data-id="wp-1015"><img src="https://picsum.photos/id/1015/220/390" alt="雾气笼罩的山脊" width="191" height="340" loading="lazy"></figure><figure data-id="wp-1016"><img src="https://picsum.photos/id/1016/480/270" alt="海边的岩壁与海面" width="480" height="340" loading="lazy"></figure><figure data-id="wp-1018"><img src="https://picsum.photos/id/1018/220/390" alt="夜里延伸向远处的铁轨" width="191" height="340" loading="lazy"></figure><figure data-id="wp-1019"><img src="https://picsum.photos/id/1019/320/266" alt="薄雾中的森林" width="320" height="340" loading="lazy"></figure><figure data-id="wp-1036"><img src="https://picsum.photos/id/1036/480/270" alt="码头上的灯光" width="480" height="340" loading="lazy"></figure><figure data-id="wp-1040"><img src="https://picsum.photos/id/1040/220/390" alt="层叠的山脊台地" width="191" height="340" loading="lazy"></figure>
+    </div>
+    <p class="hero-strip-caption" id="stripCaption" aria-live="polite">砖墙峡谷</p>
+  </div>
+  <div class="hero-bottom">
+    <p class="muted">拖动亮着的那条，再用下面的筛选取图。</p>
+    <a class="btn" href="#find">找一张壁纸</a>
+  </div>
+</header>
+
+<section class="filters reveal" id="find" aria-labelledby="find-h">
+  <h2 class="rise" id="find-h">找一张壁纸</h2>
+  <div class="filter-row rise">
+    <label class="filter-label" for="q">搜索</label>
+    <input class="search" id="q" type="search" placeholder="标题、风格、机型…" autocomplete="off">
+  </div>
+  <div class="filter-row rise" role="group" aria-label="热门机型" id="deviceChips">
+    <span class="filter-label">机型</span>
+<button type="button" class="chip" data-device="iphone" aria-pressed="false">iPhone</button>
+    <button type="button" class="chip" data-device="pixel" aria-pressed="false">Pixel</button>
+    <button type="button" class="chip" data-device="foldable" aria-pressed="false">折叠屏</button>
+  </div>
+  <div class="facets rise">
+    <div class="facet-group" role="group" aria-label="风格">
+      <span class="filter-label">风格</span>
+<button type="button" class="chip" data-style="dark" aria-pressed="false">暗色</button>
+      <button type="button" class="chip" data-style="minimal" aria-pressed="false">极简</button>
+      <button type="button" class="chip" data-style="nature" aria-pressed="false">自然</button>
+      <button type="button" class="chip" data-style="abstract" aria-pressed="false">抽象</button>
+    </div>
+    <div class="facet-group" role="group" aria-label="比例">
+      <span class="filter-label">比例</span>
+<button type="button" class="chip" data-ratio="phone-portrait" aria-pressed="false">手机</button>
+      <button type="button" class="chip" data-ratio="desktop" aria-pressed="false">桌面</button>
+      <button type="button" class="chip" data-ratio="foldable" aria-pressed="false">折叠屏</button>
+    </div>
+  </div>
+  <p class="count-line rise" id="countLine" aria-live="polite">显示 24 / 24 张壁纸</p>
+</section>
+
+<section class="sheet reveal" id="sheet" aria-labelledby="sheet-h">
+  <h2 class="sr-only" id="sheet-h">接触印样</h2>
+  <div class="sheet-grid" id="sheetGrid">
+<figure class="frame" tabindex="0" role="button" data-id="wp-1029" aria-label="打开公园高楼薄雾"><img src="https://picsum.photos/id/1029/480/270" alt="薄雾中的公园与高楼" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-188" aria-label="打开落雪的屋顶"><img src="https://picsum.photos/id/188/360/640" alt="积雪覆盖的屋顶" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-322" aria-label="打开赭色小巷"><img src="https://picsum.photos/id/322/360/640" alt="赭黄色墙面夹出的窄巷" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-868" aria-label="打开天际线渐隐"><img src="https://picsum.photos/id/868/420/350" alt="渐渐隐去的天际线" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-299" aria-label="打开砖墙峡谷"><img src="https://picsum.photos/id/299/360/640" alt="砖墙夹出的一条窄道" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-288" aria-label="打开水岸粉彩"><img src="https://picsum.photos/id/288/480/270" alt="水岸边的柔和粉彩色调" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-344" aria-label="打开金水与玻璃"><img src="https://picsum.photos/id/344/480/270" alt="金色水面与玻璃质感的光影" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-49" aria-label="打开白色风车"><img src="https://picsum.photos/id/49/360/640" alt="白色的风车" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1015" aria-label="打开雾中山脊"><img src="https://picsum.photos/id/1015/360/640" alt="雾气笼罩的山脊" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1016" aria-label="打开海边悬崖"><img src="https://picsum.photos/id/1016/480/270" alt="海边的岩壁与海面" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1018" aria-label="打开夜色铁轨"><img src="https://picsum.photos/id/1018/360/640" alt="夜里延伸向远处的铁轨" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1019" aria-label="打开薄雾森林"><img src="https://picsum.photos/id/1019/420/350" alt="薄雾中的森林" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1036" aria-label="打开码头灯火"><img src="https://picsum.photos/id/1036/480/270" alt="码头上的灯光" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1040" aria-label="打开山脊台地"><img src="https://picsum.photos/id/1040/360/640" alt="层叠的山脊台地" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1043" aria-label="打开河流弯道"><img src="https://picsum.photos/id/1043/420/350" alt="转弯处的河道" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1044" aria-label="打开柔和沙丘"><img src="https://picsum.photos/id/1044/360/640" alt="线条柔和的沙丘" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1050" aria-label="打开蓝调海湾"><img src="https://picsum.photos/id/1050/480/270" alt="蓝调时刻的海湾" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1060" aria-label="打开石板小路"><img src="https://picsum.photos/id/1060/360/640" alt="一条石板铺成的小路" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1074" aria-label="打开玻璃中庭"><img src="https://picsum.photos/id/1074/420/350" alt="玻璃结构的中庭" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1080" aria-label="打开山谷公路"><img src="https://picsum.photos/id/1080/480/270" alt="穿过山谷的公路" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1084" aria-label="打开安静港口"><img src="https://picsum.photos/id/1084/360/640" alt="安静的港口" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-110" aria-label="打开麦田"><img src="https://picsum.photos/id/110/480/270" alt="成片的麦田" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-129" aria-label="打开混凝土折角"><img src="https://picsum.photos/id/129/420/350" alt="混凝土墙面的折角线条" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-137" aria-label="打开墨色几何"><img src="https://picsum.photos/id/137/360/640" alt="墨色与几何形状的组合" width="68" height="120" loading="lazy"></figure>
+  </div>
+  <p class="empty" id="emptyMsg" hidden>这一批里还没有这类壁纸。换个机型，或清空搜索试试。</p>
+</section>
+
+<section class="quiet-strip reveal" aria-labelledby="quiet-h">
+  <h2 class="strip-title rise" id="quiet-h">手机画幅 <span class="muted" id="quietCount">11</span></h2>
+  <div class="quiet-row" id="quietRow">
+<figure data-id="wp-188"><img src="https://picsum.photos/id/188/360/640" alt="积雪覆盖的屋顶" loading="lazy"></figure>
+    <figure data-id="wp-322"><img src="https://picsum.photos/id/322/360/640" alt="赭黄色墙面夹出的窄巷" loading="lazy"></figure>
+    <figure data-id="wp-299"><img src="https://picsum.photos/id/299/360/640" alt="砖墙夹出的一条窄道" loading="lazy"></figure>
+    <figure data-id="wp-49"><img src="https://picsum.photos/id/49/360/640" alt="白色的风车" loading="lazy"></figure>
+    <figure data-id="wp-1015"><img src="https://picsum.photos/id/1015/360/640" alt="雾气笼罩的山脊" loading="lazy"></figure>
+    <figure data-id="wp-1018"><img src="https://picsum.photos/id/1018/360/640" alt="夜里延伸向远处的铁轨" loading="lazy"></figure>
+    <figure data-id="wp-1040"><img src="https://picsum.photos/id/1040/360/640" alt="层叠的山脊台地" loading="lazy"></figure>
+    <figure data-id="wp-1044"><img src="https://picsum.photos/id/1044/360/640" alt="线条柔和的沙丘" loading="lazy"></figure>
+    <figure data-id="wp-1060"><img src="https://picsum.photos/id/1060/360/640" alt="一条石板铺成的小路" loading="lazy"></figure>
+    <figure data-id="wp-1084"><img src="https://picsum.photos/id/1084/360/640" alt="安静的港口" loading="lazy"></figure>
+    <figure data-id="wp-137"><img src="https://picsum.photos/id/137/360/640" alt="墨色与几何形状的组合" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="showcase reveal" aria-labelledby="show-h">
+  <div class="showcase-meta">
+    <h2 id="show-h">单张特写</h2>
+    <a href="#sheet">回到接触印样</a>
+    <p class="showcase-note" id="showNote">砖墙峡谷——暗色，手机。</p>
+  </div>
+  <div>
+    <div class="showcase-run" id="showRun">
+<div><figure data-id="wp-1029"><img src="https://picsum.photos/id/1029/480/270" alt="薄雾中的公园与高楼" loading="lazy"></figure><div class="frame-cap"><span>公园高楼薄雾</span><span>桌面</span></div></div>
+      <div><figure data-id="wp-322"><img src="https://picsum.photos/id/322/220/390" alt="赭黄色墙面夹出的窄巷" loading="lazy"></figure><div class="frame-cap"><span>赭色小巷</span><span>手机</span></div></div>
+      <div><figure data-id="wp-299" class="is-lifted"><img src="https://picsum.photos/id/299/220/390" alt="砖墙夹出的一条窄道" loading="lazy"></figure><div class="frame-cap"><span>砖墙峡谷</span><span>手机</span></div></div>
+      <div><figure data-id="wp-288"><img src="https://picsum.photos/id/288/480/270" alt="水岸边的柔和粉彩色调" loading="lazy"></figure><div class="frame-cap"><span>水岸粉彩</span><span>桌面</span></div></div>
+      <div><figure data-id="wp-1015"><img src="https://picsum.photos/id/1015/220/390" alt="雾气笼罩的山脊" loading="lazy"></figure><div class="frame-cap"><span>雾中山脊</span><span>手机</span></div></div>
+      <div><figure data-id="wp-1016"><img src="https://picsum.photos/id/1016/480/270" alt="海边的岩壁与海面" loading="lazy"></figure><div class="frame-cap"><span>海边悬崖</span><span>桌面</span></div></div>
+      <div><figure data-id="wp-1018"><img src="https://picsum.photos/id/1018/220/390" alt="夜里延伸向远处的铁轨" loading="lazy"></figure><div class="frame-cap"><span>夜色铁轨</span><span>手机</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about reveal" id="about" aria-labelledby="about-h">
+  <div class="about-facts rise">
+    <span>验证站点</span>
+    <span>始于 2026</span>
+    <span>自有模型批</span>
+  </div>
+  <div>
+    <h2 class="rise" id="about-h">关于这一批</h2>
+    <p class="about-body rise">
+      <img class="portrait" src="https://picsum.photos/id/322/200/200" width="200" height="200" alt="" loading="lazy">
+      <strong>Batch Light</strong> 是一个手机、桌面和折叠屏的壁纸抽屉。自有模型出图，用于验证，不是图库市场。
+    </p>
+    <p class="about-body soft rise">点开一张，看比例和标签，再下载。搜索没有结果，说明这一批里还没有。</p>
+  </div>
+</section>
+
+<div class="footer-space" aria-hidden="true"></div>
+<footer class="footer">
+  <span class="left">壁纸 · 批次微光</span>
+  <nav class="centre" aria-label="页脚">
+    <a href="#find">查找</a>
+    <a href="#sheet">印样</a>
+    <a href="#about">关于</a>
+  </nav>
+  <span class="right">2026 · 示例图为 picsum 填充</span>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
+  <button type="button" class="lightbox-close" id="lbClose" aria-label="关闭">关闭</button>
+  <div class="lightbox-panel">
+    <img id="lbImg" alt="">
+    <div class="lightbox-side">
+      <h2 id="lbTitle"></h2>
+      <div class="attrs" id="lbAttrs"></div>
+      <div class="lightbox-actions">
+        <a class="btn" id="lbDownload" href="#">下载</a>
+        <button type="button" class="btn btn-ghost" id="lbSave">保存壁纸</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="app-data">{"lang":"zh-Hans","strings":{"meta.title":"Batch Light — 手机、桌面与折叠屏壁纸","meta.description":"一批手机、桌面与折叠屏壁纸：在接触印样里搜索，点开一张，下载同一份文件。","skip.link":"跳到壁纸","lang.aria":"语言","hero.support":"手机、桌面与折叠屏壁纸，同一批暗室印样。","hero.about":"关于","hero.stripAria":"精选壁纸，可左右拖动","hero.stripHint":"拖动亮着的那条，再用下面的筛选取图。","hero.cta":"找一张壁纸","find.heading":"找一张壁纸","find.searchLabel":"搜索","find.searchPlaceholder":"标题、风格、机型…","find.devicesAria":"热门机型","find.deviceLabel":"机型","find.styleAria":"风格","find.styleLabel":"风格","find.ratioAria":"比例","find.ratioLabel":"比例","find.count":"显示 {visible} / {total} 张壁纸","style.dark":"暗色","style.minimal":"极简","style.nature":"自然","style.abstract":"抽象","ratio.phone-portrait":"手机","ratio.desktop":"桌面","ratio.foldable":"折叠屏","ratioShort.phone-portrait":"手机","ratioShort.desktop":"桌面","ratioShort.foldable":"折叠屏","device.iphone":"iPhone","device.pixel":"Pixel","device.foldable":"折叠屏","sheet.heading":"接触印样","sheet.empty":"这一批里还没有这类壁纸。换个机型，或清空搜索试试。","sheet.open":"打开{title}","quiet.heading":"手机画幅","showcase.heading":"单张特写","showcase.back":"回到接触印样","showcase.note":"从这一批里挑一张看得清楚些——下载的还是同一份文件。","showcase.noteWith":"{title}——{style}，{ratio}。","about.fact.validation":"验证站点","about.fact.since":"始于 2026","about.fact.batch":"自有模型批","about.heading":"关于这一批","about.brand":"Batch Light","about.body1":"是一个手机、桌面和折叠屏的壁纸抽屉。自有模型出图，用于验证，不是图库市场。","about.body2":"点开一张，看比例和标签，再下载。搜索没有结果，说明这一批里还没有。","footer.left":"壁纸 · 批次微光","footer.navAria":"页脚","footer.find":"查找","footer.sheet":"印样","footer.about":"关于","footer.right":"2026 · 示例图为 picsum 填充","lb.close":"关闭","lb.ratio":"比例","lb.style":"风格","lb.devices":"适配机型","lb.date":"入批日期","lb.id":"编号","lb.download":"下载","lb.save":"保存壁纸","lb.downloadFailed":"{title} · 下载失败，请重试","error.loadTitle":"这一批没能加载。请用 http 方式打开（python -m http.server）。","error.loadBody":"这一批没能加载。请用本地服务器打开，不要用 file:// 直接打开。"},"items":[{"id":"wp-1029","title":"公园高楼薄雾","alt":"薄雾中的公园与高楼","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["city","haze"],"created_at":"2026-10-12","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1029/480/270","strip":"https://picsum.photos/id/1029/480/270","full":"https://picsum.photos/id/1029/1600/900"},"download_filename":"wp-1029.jpg","thumbW":213,"search":"park towers haze wp-1029 公园高楼薄雾 city haze 城市 薄雾 高楼 公园 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-188","title":"落雪的屋顶","alt":"积雪覆盖的屋顶","ratio":"phone-portrait","style":"minimal","device_tags":["iphone","pixel"],"tags":["snow","roof"],"created_at":"2026-10-12","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/188/360/640","strip":"https://picsum.photos/id/188/220/390","full":"https://picsum.photos/id/188/900/1600"},"download_filename":"wp-188.jpg","thumbW":68,"search":"snow rooftops wp-188 落雪的屋顶 snow roof 雪 屋顶 冬日 minimal 极简 phone 手机 iphone pixel iphone iphone pixel pixel"},{"id":"wp-322","title":"赭色小巷","alt":"赭黄色墙面夹出的窄巷","ratio":"phone-portrait","style":"dark","device_tags":["iphone"],"tags":["alley"],"created_at":"2026-10-14","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/322/360/640","strip":"https://picsum.photos/id/322/220/390","full":"https://picsum.photos/id/322/900/1600"},"download_filename":"wp-322.jpg","thumbW":68,"search":"ochre alley wp-322 赭色小巷 alley 小巷 赭色 街道 dark 暗色 phone 手机 iphone iphone iphone"},{"id":"wp-868","title":"天际线渐隐","alt":"渐渐隐去的天际线","ratio":"foldable","style":"minimal","device_tags":["foldable","pixel"],"tags":["skyline"],"created_at":"2026-10-14","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/868/420/350","strip":"https://picsum.photos/id/868/320/266","full":"https://picsum.photos/id/868/1200/1000"},"download_filename":"wp-868.jpg","thumbW":144,"search":"skyline fade wp-868 天际线渐隐 skyline 天际线 城市 远景 minimal 极简 foldable 折叠屏 foldable pixel fold 折叠屏 pixel pixel"},{"id":"wp-299","title":"砖墙峡谷","alt":"砖墙夹出的一条窄道","ratio":"phone-portrait","style":"dark","device_tags":["pixel","iphone"],"tags":["brick"],"created_at":"2026-10-15","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/299/360/640","strip":"https://picsum.photos/id/299/220/390","full":"https://picsum.photos/id/299/900/1600"},"download_filename":"wp-299.jpg","thumbW":68,"search":"brick canyon wp-299 砖墙峡谷 brick 砖墙 峡谷 建筑 dark 暗色 phone 手机 pixel iphone pixel pixel iphone iphone"},{"id":"wp-288","title":"水岸粉彩","alt":"水岸边的柔和粉彩色调","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["water"],"created_at":"2026-10-15","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/288/480/270","strip":"https://picsum.photos/id/288/480/270","full":"https://picsum.photos/id/288/1600/900"},"download_filename":"wp-288.jpg","thumbW":213,"search":"waterfront pastels wp-288 水岸粉彩 water 水岸 粉彩 柔和 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-344","title":"金水与玻璃","alt":"金色水面与玻璃质感的光影","ratio":"desktop","style":"abstract","device_tags":["desktop"],"tags":["gold","glass"],"created_at":"2026-10-16","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/344/480/270","strip":"https://picsum.photos/id/344/480/270","full":"https://picsum.photos/id/344/1600/900"},"download_filename":"wp-344.jpg","thumbW":213,"search":"gold water glass wp-344 金水与玻璃 gold glass 金色 水面 玻璃 abstract 抽象 desktop 桌面 desktop desktop desktop"},{"id":"wp-49","title":"白色风车","alt":"白色的风车","ratio":"phone-portrait","style":"minimal","device_tags":["iphone"],"tags":["windmill"],"created_at":"2026-10-16","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/49/360/640","strip":"https://picsum.photos/id/49/220/390","full":"https://picsum.photos/id/49/900/1600"},"download_filename":"wp-49.jpg","thumbW":68,"search":"windmill white wp-49 白色风车 windmill 风车 白色 minimal 极简 phone 手机 iphone iphone iphone"},{"id":"wp-1015","title":"雾中山脊","alt":"雾气笼罩的山脊","ratio":"phone-portrait","style":"nature","device_tags":["iphone","pixel"],"tags":["fog"],"created_at":"2026-10-18","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1015/360/640","strip":"https://picsum.photos/id/1015/220/390","full":"https://picsum.photos/id/1015/900/1600"},"download_filename":"wp-1015.jpg","thumbW":68,"search":"fog ridge wp-1015 雾中山脊 fog 雾 山脊 山 nature 自然 phone 手机 iphone pixel iphone iphone pixel pixel"},{"id":"wp-1016","title":"海边悬崖","alt":"海边的岩壁与海面","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["sea","cliff"],"created_at":"2026-10-18","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1016/480/270","strip":"https://picsum.photos/id/1016/480/270","full":"https://picsum.photos/id/1016/1600/900"},"download_filename":"wp-1016.jpg","thumbW":213,"search":"sea cliffs wp-1016 海边悬崖 sea cliff 海 悬崖 海岸 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-1018","title":"夜色铁轨","alt":"夜里延伸向远处的铁轨","ratio":"phone-portrait","style":"dark","device_tags":["pixel"],"tags":["night","rail"],"created_at":"2026-10-19","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1018/360/640","strip":"https://picsum.photos/id/1018/220/390","full":"https://picsum.photos/id/1018/900/1600"},"download_filename":"wp-1018.jpg","thumbW":68,"search":"night rails wp-1018 夜色铁轨 night rail 夜晚 铁轨 街道 dark 暗色 phone 手机 pixel pixel pixel"},{"id":"wp-1019","title":"薄雾森林","alt":"薄雾中的森林","ratio":"foldable","style":"nature","device_tags":["foldable"],"tags":["forest"],"created_at":"2026-10-19","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/1019/420/350","strip":"https://picsum.photos/id/1019/320/266","full":"https://picsum.photos/id/1019/1200/1000"},"download_filename":"wp-1019.jpg","thumbW":144,"search":"forest mist wp-1019 薄雾森林 forest 森林 雾 树林 nature 自然 foldable 折叠屏 foldable fold 折叠屏"},{"id":"wp-1036","title":"码头灯火","alt":"码头上的灯光","ratio":"desktop","style":"dark","device_tags":["desktop"],"tags":["pier"],"created_at":"2026-10-20","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1036/480/270","strip":"https://picsum.photos/id/1036/480/270","full":"https://picsum.photos/id/1036/1600/900"},"download_filename":"wp-1036.jpg","thumbW":213,"search":"pier lights wp-1036 码头灯火 pier 码头 灯光 夜晚 dark 暗色 desktop 桌面 desktop desktop desktop"},{"id":"wp-1040","title":"山脊台地","alt":"层叠的山脊台地","ratio":"phone-portrait","style":"minimal","device_tags":["iphone"],"tags":["mountain"],"created_at":"2026-10-20","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1040/360/640","strip":"https://picsum.photos/id/1040/220/390","full":"https://picsum.photos/id/1040/900/1600"},"download_filename":"wp-1040.jpg","thumbW":68,"search":"mountain shelf wp-1040 山脊台地 mountain 山 台地 山脊 minimal 极简 phone 手机 iphone iphone iphone"},{"id":"wp-1043","title":"河流弯道","alt":"转弯处的河道","ratio":"foldable","style":"nature","device_tags":["foldable","iphone"],"tags":["river"],"created_at":"2026-10-21","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/1043/420/350","strip":"https://picsum.photos/id/1043/320/266","full":"https://picsum.photos/id/1043/1200/1000"},"download_filename":"wp-1043.jpg","thumbW":144,"search":"river bend wp-1043 河流弯道 river 河流 转弯 水 nature 自然 foldable 折叠屏 foldable iphone fold 折叠屏 iphone iphone"},{"id":"wp-1044","title":"柔和沙丘","alt":"线条柔和的沙丘","ratio":"phone-portrait","style":"abstract","device_tags":["pixel"],"tags":["dune"],"created_at":"2026-10-21","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1044/360/640","strip":"https://picsum.photos/id/1044/220/390","full":"https://picsum.photos/id/1044/900/1600"},"download_filename":"wp-1044.jpg","thumbW":68,"search":"soft dunes wp-1044 柔和沙丘 dune 沙丘 沙漠 柔和 abstract 抽象 phone 手机 pixel pixel pixel"},{"id":"wp-1050","title":"蓝调海湾","alt":"蓝调时刻的海湾","ratio":"desktop","style":"dark","device_tags":["desktop"],"tags":["bay"],"created_at":"2026-10-22","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1050/480/270","strip":"https://picsum.photos/id/1050/480/270","full":"https://picsum.photos/id/1050/1600/900"},"download_filename":"wp-1050.jpg","thumbW":213,"search":"blue hour bay wp-1050 蓝调海湾 bay 海湾 蓝调 傍晚 dark 暗色 desktop 桌面 desktop desktop desktop"},{"id":"wp-1060","title":"石板小路","alt":"一条石板铺成的小路","ratio":"phone-portrait","style":"minimal","device_tags":["iphone","pixel"],"tags":["path"],"created_at":"2026-10-22","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1060/360/640","strip":"https://picsum.photos/id/1060/220/390","full":"https://picsum.photos/id/1060/900/1600"},"download_filename":"wp-1060.jpg","thumbW":68,"search":"stone path wp-1060 石板小路 path 石板 小路 路径 minimal 极简 phone 手机 iphone pixel iphone iphone pixel pixel"},{"id":"wp-1074","title":"玻璃中庭","alt":"玻璃结构的中庭","ratio":"foldable","style":"abstract","device_tags":["foldable"],"tags":["glass"],"created_at":"2026-10-24","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/1074/420/350","strip":"https://picsum.photos/id/1074/320/266","full":"https://picsum.photos/id/1074/1200/1000"},"download_filename":"wp-1074.jpg","thumbW":144,"search":"glass atrium wp-1074 玻璃中庭 glass 玻璃 中庭 建筑 abstract 抽象 foldable 折叠屏 foldable fold 折叠屏"},{"id":"wp-1080","title":"山谷公路","alt":"穿过山谷的公路","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["valley"],"created_at":"2026-10-24","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1080/480/270","strip":"https://picsum.photos/id/1080/480/270","full":"https://picsum.photos/id/1080/1600/900"},"download_filename":"wp-1080.jpg","thumbW":213,"search":"valley road wp-1080 山谷公路 valley 山谷 公路 道路 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-1084","title":"安静港口","alt":"安静的港口","ratio":"phone-portrait","style":"dark","device_tags":["iphone"],"tags":["harbour"],"created_at":"2026-10-25","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1084/360/640","strip":"https://picsum.photos/id/1084/220/390","full":"https://picsum.photos/id/1084/900/1600"},"download_filename":"wp-1084.jpg","thumbW":68,"search":"quiet harbour wp-1084 安静港口 harbour 港口 安静 船 dark 暗色 phone 手机 iphone iphone iphone"},{"id":"wp-110","title":"麦田","alt":"成片的麦田","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["wheat"],"created_at":"2026-10-25","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/110/480/270","strip":"https://picsum.photos/id/110/480/270","full":"https://picsum.photos/id/110/1600/900"},"download_filename":"wp-110.jpg","thumbW":213,"search":"wheat field wp-110 麦田 wheat 麦田 农田 金色 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-129","title":"混凝土折角","alt":"混凝土墙面的折角线条","ratio":"foldable","style":"minimal","device_tags":["foldable","pixel"],"tags":["concrete"],"created_at":"2026-10-26","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/129/420/350","strip":"https://picsum.photos/id/129/320/266","full":"https://picsum.photos/id/129/1200/1000"},"download_filename":"wp-129.jpg","thumbW":144,"search":"concrete fold wp-129 混凝土折角 concrete 混凝土 折角 建筑 minimal 极简 foldable 折叠屏 foldable pixel fold 折叠屏 pixel pixel"},{"id":"wp-137","title":"墨色几何","alt":"墨色与几何形状的组合","ratio":"phone-portrait","style":"abstract","device_tags":["iphone","pixel"],"tags":["ink","geometry"],"created_at":"2026-10-26","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/137/360/640","strip":"https://picsum.photos/id/137/220/390","full":"https://picsum.photos/id/137/900/1600"},"download_filename":"wp-137.jpg","thumbW":68,"search":"ink geometry wp-137 墨色几何 ink geometry 墨 几何 抽象 abstract 抽象 phone 手机 iphone pixel iphone iphone pixel pixel"}],"devices":[{"id":"iphone","label":"iPhone"},{"id":"pixel","label":"Pixel"},{"id":"foldable","label":"折叠屏"}],"styles":["dark","minimal","nature","abstract"],"ratios":["phone-portrait","desktop","foldable"],"selfPath":"/zh/","otherPath":"/","otherLang":"en"}</script>
+<script src="/wallpapers.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,91 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-load-error="Could not load this batch. Serve the folder over http (python -m http.server).">
 <head>
-<script>
-(function () {
-  var KEY = "batch-light-theme";
-  var theme = null;
-  try { theme = localStorage.getItem(KEY); } catch (e) {}
-  if (theme !== "light" && theme !== "dark") {
-    theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-  document.documentElement.setAttribute("data-theme", theme);
-  document.documentElement.style.colorScheme = theme;
-})();
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Batch Light wallpapers</title>
-<link rel="preconnect" href="https://api.fontshare.com">
-<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<title>Batch Light — phone, desktop and foldable wallpapers</title>
+<meta name="description" content="Phone, desktop and foldable wallpapers in one darkroom batch: search the contact sheet, open a frame, download the same file.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
 <style>
-:root,
-html[data-theme="light"] {
-  --bg: #ffffff;
-  --surface: #f4f4f2;
-  --raised: #ecece8;
-  --ink: #1f2b4d;
-  --muted: #4a5163;
-  --accent: #f7941d;
-  --accent-ink: #1f2b4d;
-  --field-1: #121826;
-  --field-1-ink: #f4f4f2;
-  --field-2: #e3e1dc;
-  --field-2-ink: #1f2b4d;
-  --panel: #ffffff;
-  --scrim: rgba(15, 18, 28, 0.55);
-  --font: "Switzer", system-ui, sans-serif;
-  --step-small: 0.875rem;
-  --step-body: 1.125rem;
-  --step-lead: 1.375rem;
-  --step-head: 2rem;
-  --step-display: clamp(2.75rem, 6vw, 5.5rem);
-  --margin: clamp(1.25rem, 2vw, 2rem);
-  --gutter: 8px;
-  --section: clamp(4.5rem, 7vw, 7rem);
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --ink: #f2f2f2;
+  --muted: #8a8a8a;
+  --accent: #e8b86d;
+  --accent-ink: #0a0a0a;
+  --font-display: "Hanken Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --font-text: "Hanken Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --margin: clamp(1rem, 2.2vw, 2rem);
+  --gutter: clamp(0.75rem, 1.5vw, 1.25rem);
+  --section: clamp(5rem, 10vw, 10rem);
   --radius: 0px;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --t-hover: 160ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-hover: 180ms;
   --t-ui: 240ms;
-  --t-reveal: 480ms;
-}
-html[data-theme="dark"] {
-  --bg: #0f141f;
-  --surface: #171d2b;
-  --raised: #1f2738;
-  --ink: #e8ebf2;
-  --muted: #a7b0c2;
-  --accent: #f7941d;
-  --accent-ink: #121826;
-  --field-1: #e8ebf2;
-  --field-1-ink: #121826;
-  --field-2: #252e42;
-  --field-2-ink: #e8ebf2;
-  --panel: #171d2b;
-  --scrim: rgba(6, 8, 14, 0.72);
-}
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
-    --bg: #0f141f;
-    --surface: #171d2b;
-    --raised: #1f2738;
-    --ink: #e8ebf2;
-    --muted: #a7b0c2;
-    --accent: #f7941d;
-    --accent-ink: #121826;
-    --field-1: #e8ebf2;
-    --field-1-ink: #121826;
-    --field-2: #252e42;
-    --field-2-ink: #e8ebf2;
-    --panel: #171d2b;
-    --scrim: rgba(6, 8, 14, 0.72);
-  }
+  --t-reveal: 800ms;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html {
   -webkit-text-size-adjust: 100%;
   overflow-x: clip;
+  scrollbar-gutter: stable;
 }
 body {
   margin: 0;
@@ -94,7 +46,7 @@ body {
   max-width: 100%;
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font);
+  font-family: var(--font-text);
   font-size: var(--step-body);
   line-height: 1.5;
   font-weight: 400;
@@ -105,119 +57,148 @@ img { display: block; max-width: 100%; height: auto; background: var(--surface);
 button, input { font: inherit; color: inherit; }
 button { background: none; border: 0; padding: 0; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
-a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
+.wrap { padding-inline: var(--margin); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-h1, h2, h3 {
-  font-family: var(--font);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  margin: 0;
-  text-wrap: balance;
-  color: var(--ink);
-}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.05em; margin: 0; text-wrap: balance; }
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] h2,
+html[lang="zh-Hans"] h3 { letter-spacing: -0.02em; }
 .muted { color: var(--muted); }
 .small { font-size: var(--step-small); line-height: 1.45; }
 
-/* —— Top band + hero —— */
-.topband {
+/* —— Hero: lit strip, four corners —— */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--bg);
+}
+.hero-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px 32px;
+  align-items: start;
+  padding: 36px var(--margin) 12px;
+  z-index: 2;
+}
+.hero-top h1 {
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  margin: 0;
+  max-width: 12ch;
+}
+.hero-links {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 12px 24px;
-  padding: 14px var(--margin) 12px;
-  background: var(--bg);
-  font-size: var(--step-small);
-  color: var(--muted);
+  justify-content: flex-end;
+  gap: 8px 18px;
 }
-.topband .who { color: var(--ink); font-weight: 500; }
-.topband .what { flex: 1 1 220px; max-width: 42ch; }
-.topband .meta { flex: 0 1 auto; }
-.topband .nav { display: flex; gap: 16px; justify-content: flex-end; flex-wrap: wrap; margin-left: auto; }
-.topband a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 0 12px;
-  background: var(--surface);
-  color: var(--ink);
-  font: inherit;
+.lang-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
   font-size: var(--step-small);
   font-weight: 500;
-  cursor: pointer;
-  border: 0;
 }
-.theme-toggle:hover { background: var(--raised); }
-.theme-toggle .theme-state { color: var(--muted); font-weight: 400; }
-.theme-toggle[aria-pressed="true"] .theme-mode::after { content: none; }
-@media (max-width: 47.9em) {
-  .topband .nav { margin-left: 0; justify-content: flex-start; width: 100%; }
+.lang-switch a { color: var(--muted); }
+.lang-switch a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.hero-top .about-link {
+  font-size: var(--step-small);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-
-.hero {
-  padding: 4px var(--margin) 20px;
-  background: var(--bg);
-}
-.hero-row {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
-  gap: 20px 28px;
-  align-items: stretch;
-}
-.hero-visual {
-  margin: 0;
-  min-height: 360px;
-  max-height: 420px;
-  background: var(--surface);
-  overflow: hidden;
-}
-.hero-visual img {
+.edge-close {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  min-height: 360px;
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
-  line-height: 0.92;
-  letter-spacing: -0.04em;
-  font-weight: 600;
-  max-width: 10ch;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
 }
 .hero-support {
-  margin: 16px 0 0;
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
   max-width: 36ch;
-  font-size: var(--step-lead);
-  line-height: 1.4;
+  font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+  line-height: 1.35;
   color: var(--ink);
   font-weight: 400;
 }
-.hero-copy {
+.hero-strip-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 14px;
-  min-height: 360px;
-  padding: 8px 0 8px;
+  justify-content: center;
+  min-height: 0;
+  gap: 12px;
 }
-.hero-copy-main { display: flex; flex-direction: column; gap: 14px; }
-.hero-aside {
+.hero-strip {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 16px;
-  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 42vh;
+  min-height: 280px;
+  max-height: 420px;
+  padding-inline: var(--margin);
+  scroll-padding-inline: var(--margin);
+  cursor: grab;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
-.hero-aside p {
+.hero-strip::-webkit-scrollbar { display: none; }
+.hero-strip.is-dragging { cursor: grabbing; }
+.hero-strip figure {
+  flex: 0 0 auto;
+  height: 100%;
   margin: 0;
-  color: var(--muted);
-  font-size: var(--step-body);
-  max-width: 32ch;
+  scroll-snap-align: center;
+  filter: brightness(0.55);
+  transition: filter var(--t-hover) var(--ease-out), transform var(--t-hover) var(--ease-out);
+  cursor: pointer;
 }
+.hero-strip figure.is-lit,
+.hero-strip figure:hover { filter: brightness(1); }
+.hero-strip figure.is-lit img {
+  animation: strip-breathe 12s var(--ease-out) infinite alternate;
+}
+@keyframes strip-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
+}
+.hero-strip img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+.hero-strip-caption {
+  padding-inline: var(--margin);
+  font-size: var(--step-small);
+  font-weight: 500;
+  min-height: 1.4em;
+  color: var(--ink);
+}
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 0 var(--margin) 44px;
+  font-size: var(--step-small);
+  font-weight: 500;
+}
+.hero-bottom p { margin: 0; max-width: 36ch; color: var(--muted); font-size: var(--step-body); font-weight: 400; }
 .btn {
   display: inline-flex;
   align-items: center;
@@ -229,51 +210,48 @@ h1, h2, h3 {
   font-weight: 500;
   font-size: var(--step-small);
   letter-spacing: -0.01em;
-  text-decoration: none;
-  transition: background var(--t-hover) var(--ease), color var(--t-hover) var(--ease), transform 120ms var(--ease);
+  transition: opacity var(--t-hover) var(--ease-out), transform 140ms var(--ease-out);
 }
-.btn:hover { background: #e08610; text-decoration: none; color: var(--accent-ink); }
-.btn:active { transform: scale(0.98); }
+.btn:hover { opacity: 0.92; }
+.btn:active { transform: translateY(1px); }
 .btn-ghost {
   background: var(--surface);
   color: var(--ink);
 }
-.btn-ghost:hover { background: var(--raised); color: var(--ink); }
-.batch-stamp {
-  display: inline-block;
-  font-size: var(--step-small);
-  font-weight: 500;
-  color: var(--ink);
-  background: var(--surface);
-  padding: 6px 10px;
-}
+
 @media (max-width: 47.9em) {
-  .hero-row { grid-template-columns: 1fr; gap: 16px; }
-  .hero-copy { min-height: 0; }
-  .hero-visual { min-height: 220px; max-height: 260px; order: -1; }
-  .hero-visual img { min-height: 220px; }
-  .hero h1 { font-size: clamp(2.25rem, 11vw, 2.75rem); }
+  .hero-strip { height: 46vh; max-height: none; }
+  .hero-top { grid-template-columns: 1fr; }
+  .hero-links { justify-content: flex-start; }
+  .hero-bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
+  .hero-bottom p { flex: 1 1 100%; margin-bottom: 12px; }
+  .hero-bottom .btn { margin-left: auto; }
 }
 
-/* —— Filters —— */
+/* —— Filters / sheet —— */
 .filters {
-  padding: 40px var(--margin) 20px;
-  background: var(--surface);
+  padding: 120px var(--margin) 24px;
+  background: var(--bg);
+  margin-top: 48px;
 }
 .filters h2 {
   font-size: var(--step-head);
-  line-height: 1.05;
-  margin-bottom: 24px;
-  max-width: 14ch;
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin-bottom: 28px;
+  max-width: 16ch;
 }
 .filter-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 .filter-label {
   font-size: var(--step-small);
@@ -284,7 +262,7 @@ h1, h2, h3 {
   flex: 1 1 220px;
   min-height: 44px;
   padding: 0 14px;
-  background: var(--bg);
+  background: var(--surface);
   border: 0;
   color: var(--ink);
   font-size: var(--step-body);
@@ -293,23 +271,22 @@ h1, h2, h3 {
 .chip {
   min-height: 40px;
   padding: 0 14px;
-  background: var(--bg);
+  background: var(--surface);
   color: var(--muted);
   font-size: var(--step-small);
   font-weight: 500;
-  transition: background var(--t-ui) var(--ease), color var(--t-ui) var(--ease);
+  transition: background var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out);
 }
 .chip[aria-pressed="true"] {
   background: var(--ink);
   color: var(--bg);
 }
 .chip:hover { color: var(--ink); }
-.chip[aria-pressed="true"]:hover { color: var(--bg); }
 .facets {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 32px;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 @media (max-width: 47.9em) {
   .facets { grid-template-columns: 1fr; }
@@ -319,27 +296,16 @@ h1, h2, h3 {
   margin-top: 20px;
   font-size: var(--step-small);
   color: var(--muted);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 16px;
-  align-items: baseline;
-}
-.count-line .stamp {
-  color: var(--ink);
-  font-weight: 500;
-  background: var(--bg);
-  padding: 4px 8px;
 }
 
-/* —— Contact sheet —— */
+/* Contact sheet */
 .sheet {
-  padding: 16px var(--margin) 64px;
-  background: var(--surface);
+  padding: 8px var(--margin) 80px;
 }
 .sheet-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   align-items: flex-start;
   width: 100%;
 }
@@ -352,18 +318,19 @@ h1, h2, h3 {
 .frame {
   flex: 0 0 auto;
   margin: 0;
-  height: 112px;
+  height: 120px;
   position: relative;
   cursor: pointer;
-  transition: opacity var(--t-hover) var(--ease);
+  transition: opacity var(--t-hover) var(--ease-out), transform 250ms var(--ease-out);
 }
 .frame img {
   height: 100%;
   width: auto;
   object-fit: cover;
 }
+.frame:hover { transform: scale(1.04); z-index: 1; }
 .frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.sheet.is-dimming .frame:not(:hover):not(:focus-visible) { opacity: 0.28; }
+.sheet.is-dimming .frame:not(:hover):not(:focus-visible) { opacity: 0.35; }
 .empty {
   padding: 64px 0;
   font-size: var(--step-lead);
@@ -371,324 +338,175 @@ h1, h2, h3 {
   max-width: 28ch;
 }
 
-/* —— Index list (two-ended rows) —— */
-.index-list {
-  padding: var(--section) var(--margin);
-  background: var(--bg);
-}
-.index-list h2 {
-  font-size: clamp(1.375rem, 1.8vw, 1.625rem);
-  font-weight: 500;
-  margin-bottom: 28px;
-}
-.index-col {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
-  gap: 40px 48px;
-  align-items: start;
-  width: 100%;
-}
-@media (max-width: 47.9em) {
-  .index-col { grid-template-columns: 1fr; gap: 24px; }
-}
-.index-group { margin-bottom: 40px; }
-.index-group-label {
-  font-size: var(--step-body);
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-.index-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 36px;
-  padding: 4px 0;
-  cursor: pointer;
-  transition: opacity var(--t-hover) var(--ease);
-}
-.index-row:hover,
-.index-row:focus-visible { opacity: 1; }
-.index-list.is-previewing .index-row:not(:hover):not(:focus-visible) { opacity: 0.35; }
-.index-row-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-}
-.index-dot {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
-  background: var(--surface);
-  object-fit: cover;
-}
-.index-name {
-  font-size: 1rem;
-  color: var(--ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.index-value {
-  font-size: var(--step-small);
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  flex: 0 0 auto;
-}
-.index-preview {
-  margin-top: 0;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  background: var(--surface);
-  overflow: hidden;
-  position: sticky;
-  top: 24px;
-}
-.index-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-  transition: opacity var(--t-ui) var(--ease);
-}
-@media (max-width: 47.9em) {
-  .index-row { min-height: 44px; }
-  .index-preview { max-width: 100%; aspect-ratio: 16 / 10; }
-}
-
-/* —— Gallery strip —— */
+/* Gallery strip — small frames wide space */
 .quiet-strip {
-  min-height: 0;
+  min-height: 80svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 48px 0;
-  background: var(--field-2);
-  color: var(--field-2-ink);
+  position: relative;
 }
 .quiet-strip .strip-title {
   padding-inline: var(--margin);
   font-size: var(--step-lead);
   font-weight: 500;
   margin-bottom: 20px;
-  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
 }
 .quiet-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  gap: 5vw;
+  overflow-x: auto;
+  scrollbar-width: none;
   padding-inline: var(--margin);
+  scroll-snap-type: x proximity;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 }
+.quiet-row::-webkit-scrollbar { display: none; }
 .quiet-row figure {
-  flex: 0 0 calc((100% - 40px) / 6);
+  flex: 0 0 11vw;
   min-width: 100px;
   aspect-ratio: 2 / 3;
   margin: 0;
+  scroll-snap-align: start;
+  transition: transform 250ms var(--ease-out);
   cursor: pointer;
-  transition: opacity var(--t-hover) var(--ease);
 }
-.quiet-row figure:hover { opacity: 0.85; }
+.quiet-row figure:hover { transform: scale(1.1); }
 .quiet-row img { width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 47.9em) {
-  .quiet-row figure { flex-basis: calc((100% - 16px) / 3); }
+  .quiet-row figure { flex-basis: 34vw; }
 }
 
-/* —— Showcase —— */
+/* Showcase — one lifted */
 .showcase {
   display: grid;
   grid-template-columns: minmax(140px, 1fr) minmax(0, 3fr);
   gap: var(--gutter);
   padding: var(--section) var(--margin);
-  background: var(--bg);
 }
-.showcase-meta h2 { font-size: clamp(1.5rem, 2vw, 1.75rem); margin-bottom: 12px; font-weight: 500; }
+.showcase-meta h2 { font-size: clamp(1.5rem, 2vw, 1.75rem); margin-bottom: 12px; }
 .showcase-meta a { font-size: var(--step-small); text-decoration: underline; text-underline-offset: 3px; }
 .showcase-note {
-  margin-top: 32px;
+  margin-top: 80px;
   font-size: var(--step-small);
   color: var(--muted);
   max-width: 28ch;
 }
 .showcase-run {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-end;
   gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
+.showcase-run::-webkit-scrollbar { display: none; }
 .showcase-run figure {
   flex: 0 0 auto;
   margin: 0;
-  height: 28vh;
-  min-height: 140px;
+  height: 30vh;
+  min-height: 160px;
   cursor: pointer;
-  transition: opacity var(--t-hover) var(--ease);
 }
-.showcase-run figure.is-lifted { height: calc(28vh * 2.1); min-height: 260px; }
+.showcase-run figure.is-lifted { height: calc(30vh * 2.2); min-height: 280px; }
 .showcase-run img { height: 100%; width: auto; object-fit: cover; }
 .frame-cap {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   margin-top: 8px;
+  padding-inline: 4px;
   font-size: var(--step-small);
   color: var(--muted);
   max-width: 100%;
 }
+.frame-cap span:last-child { flex: 0 0 auto; padding-right: 4px; }
 @media (max-width: 47.9em) {
   .showcase { grid-template-columns: 1fr; }
-  .showcase-run figure { height: 28vw; min-height: 100px; }
+  .showcase-run figure { height: 34vw; min-height: 120px; }
   .showcase-run figure.is-lifted { height: auto; width: 100%; min-height: 0; }
   .showcase-run figure.is-lifted img { width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; }
 }
 
-/* —— About —— */
+/* About */
 .about {
-  padding: 72px var(--margin);
-  background: var(--bg);
-}
-.about-grid {
+  padding: 140px var(--margin) 80px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 28px 40px;
-  align-items: start;
-}
-.about-grid > .portrait {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
-  background: var(--surface);
-}
-.about h2 {
-  font-size: var(--step-head);
-  margin: 0 0 20px;
-  letter-spacing: -0.03em;
-  font-weight: 500;
-  max-width: 16ch;
-}
-.about-body {
-  font-size: var(--step-lead);
-  line-height: 1.35;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  max-width: 36ch;
-  color: var(--ink);
-  margin: 0;
-}
-.about-follow {
-  margin: 1.1em 0 0;
-  font-size: var(--step-body);
-  line-height: 1.5;
-  max-width: 42ch;
-  color: var(--ink);
+  grid-template-columns: minmax(100px, 1.5fr) minmax(0, 10.5fr);
+  gap: var(--gutter);
 }
 .about-facts {
-  margin: 28px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 10px;
-  font-size: var(--step-body);
-  font-weight: 500;
-}
-.about-facts li {
-  padding: 14px 16px;
-  background: var(--surface);
-  color: var(--ink);
-}
-@media (max-width: 47.9em) {
-  .about { padding: 56px var(--margin); }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-grid > .portrait { max-height: 320px; }
-}
-
-
-/* —— Footer tiles —— */
-.footer-tiles {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 8px;
-  padding: 8px var(--margin) 8px;
-  background: var(--bg);
-}
-.ftile {
-  background: var(--surface);
-  padding: 20px;
-  min-height: 160px;
+  font-size: var(--step-small);
+  color: var(--muted);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 10px;
 }
-.ftile.statement { grid-column: 1 / 5; }
-.ftile.nav { grid-column: 5 / 8; }
-.ftile.time { grid-column: 8 / 10; }
-.ftile.mail { grid-column: 10 / 13; }
-.ftile.wordmark {
-  grid-column: 1 / 9;
-  background: var(--field-1);
-  color: var(--field-1-ink);
-  min-height: 240px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.ftile.wordmark .wm {
-  font-size: var(--step-head);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-}
-.ftile.invite {
-  grid-column: 9 / 13;
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-decoration: none;
-  min-height: 240px;
-}
-.ftile.invite:hover { text-decoration: none; filter: brightness(0.96); color: var(--accent-ink); }
-.ftile.invite .invite-copy {
+.about h2 {
   font-size: var(--step-lead);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  max-width: 12ch;
+  margin: 0 0 20px;
+  letter-spacing: -0.03em;
 }
-.ftile.invite .arrow { align-self: flex-end; width: 28px; height: 28px; }
-.ftile .legal { font-size: var(--step-small); color: var(--muted); }
-.ftile .lead {
-  font-size: var(--step-lead);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  max-width: 22ch;
+.about-body {
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 48ch;
+  color: var(--ink);
 }
-.ftile nav { display: flex; flex-direction: column; gap: 8px; font-size: 1rem; }
-.ftile nav a { text-decoration: none; }
-.ftile nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.ftile .mail-a {
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
-  font-weight: 500;
-  word-break: break-all;
+.about-body .portrait {
+  float: left;
+  width: 3.6em;
+  height: 3.6em;
+  object-fit: cover;
+  margin: 0 0.5em 0.15em 0;
 }
+.about-body.soft { color: var(--muted); }
+.about-body + .about-body { margin-top: 1.2em; clear: both; }
 @media (max-width: 47.9em) {
-  .footer-tiles { grid-template-columns: 1fr 1fr; }
-  .ftile.wordmark { grid-column: 1 / -1; min-height: 140px; }
-  .ftile.invite { grid-column: 1 / -1; min-height: 160px; }
-  .ftile.statement { grid-column: 1 / -1; }
-  .ftile.nav, .ftile.mail, .ftile.time { grid-column: auto; min-height: 120px; }
+  .about { grid-template-columns: 1fr; padding: 80px var(--margin); }
+  .about-facts { order: 2; flex-direction: row; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+  .about-body { font-size: 1.25rem; }
+  .about-body .portrait { width: 110px; height: 110px; }
 }
 
-/* —— Lightbox —— */
+/* Footer */
+.footer-space { height: 12svh; }
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 var(--margin) 30px;
+  font-size: var(--step-small);
+  gap: 16px;
+}
+.footer .left { color: var(--muted); }
+.footer .centre { display: flex; gap: 24px; justify-content: center; }
+.footer .right { text-align: right; color: var(--muted); }
+@media (max-width: 47.9em) {
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-bottom: 24px;
+  }
+  .footer .centre { justify-content: flex-start; flex-wrap: wrap; gap: 16px; }
+  .footer .right { text-align: left; }
+}
+
+/* Lightbox */
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 40;
-  background: var(--scrim);
+  background: rgba(10, 10, 10, 0.92);
   display: none;
   align-items: center;
   justify-content: center;
@@ -696,7 +514,7 @@ h1, h2, h3 {
 }
 .lightbox.is-open { display: flex; }
 .lightbox-panel {
-  background: var(--panel);
+  background: var(--surface);
   width: min(960px, 100%);
   max-height: calc(100svh - 2 * var(--margin));
   overflow: auto;
@@ -719,7 +537,6 @@ h1, h2, h3 {
 .lightbox-side h2 {
   font-size: var(--step-lead);
   letter-spacing: -0.03em;
-  font-weight: 500;
 }
 .attrs {
   display: flex;
@@ -736,182 +553,199 @@ h1, h2, h3 {
   right: 16px;
   min-height: 44px;
   min-width: 44px;
-  color: var(--field-1-ink);
+  color: var(--ink);
   font-size: var(--step-body);
-  background: var(--field-1);
+  background: var(--surface);
   padding: 0 14px;
 }
 @media (max-width: 47.9em) {
   .lightbox-panel { grid-template-columns: 1fr; }
 }
 
-/* —— Motion —— */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity var(--t-reveal) var(--ease), transform var(--t-reveal) var(--ease);
-}
+/* Motion entrances — only when JS is present, so content stays readable without it */
 .reveal.is-in { opacity: 1; transform: none; }
-.reveal.is-in .rise { opacity: 1; transform: none; }
-.rise {
+.reveal.is-in .rise {
+  opacity: 1;
+  transform: none;
+}
+.js .reveal {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+  transform: translateY(20px);
+  transition: opacity var(--t-reveal) var(--ease-out), transform var(--t-reveal) var(--ease-out);
+}
+.js .rise {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
 }
 .rise:nth-child(1) { transition-delay: 0ms; }
-.rise:nth-child(2) { transition-delay: 60ms; }
-.rise:nth-child(3) { transition-delay: 120ms; }
-.rise:nth-child(4) { transition-delay: 180ms; }
-.rise:nth-child(5) { transition-delay: 240ms; }
-.rise:nth-child(6) { transition-delay: 300ms; }
+.rise:nth-child(2) { transition-delay: 70ms; }
+.rise:nth-child(3) { transition-delay: 140ms; }
+.rise:nth-child(4) { transition-delay: 210ms; }
+.rise:nth-child(5) { transition-delay: 280ms; }
+.rise:nth-child(6) { transition-delay: 350ms; }
+.rise:nth-child(7) { transition-delay: 420ms; }
+.rise:nth-child(8) { transition-delay: 490ms; }
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .rise { opacity: 1; transform: none; transition: none; }
-  .frame, .quiet-row figure, .btn, .chip, .index-row, .index-preview img { transition: none !important; }
+  .js .reveal, .js .rise { opacity: 1; transform: none; transition: none; }
+  .hero-strip figure,
+  .hero-strip figure.is-lit img,
+  .frame,
+  .quiet-row figure,
+  .btn,
+  .chip { transition: none !important; animation: none !important; }
+  .frame:hover,
+  .quiet-row figure:hover { transform: none; }
 }
 </style>
 </head>
 <body>
 <a class="sr-only" href="#sheet">Skip to wallpapers</a>
 
-<header class="topband" aria-label="Site">
-  <div class="who">Batch Light</div>
-  <div class="what">Phone, desktop and foldable wallpapers from one published batch</div>
-  <div class="meta" id="topMeta">Batch loading…</div>
-  <nav class="nav" aria-label="On this page">
-      <a href="#find">Find</a>
-      <a href="#about">About</a>
-      <a href="privacy/">Privacy</a>
-      <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Theme: Light. Switch to dark.">
-        <span>Theme</span>
-        <span class="theme-state" id="themeState">浅色 · Light</span>
-      </button>
-    </nav>
+<header class="hero" id="top">
+  <div class="hero-top">
+    <h1>Batch Light</h1>
+    <div class="hero-links">
+      <nav class="lang-switch" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">English</a>
+        <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></nav>
+      <a class="about-link" href="#about">About</a>
+    </div>
+    <p class="hero-support">Phone, desktop and foldable wallpapers in one darkroom batch.</p>
+  </div>
+  <div class="hero-strip-wrap">
+    <div class="hero-strip" id="heroStrip" tabindex="0" aria-label="Featured wallpapers, drag sideways">
+<figure data-id="wp-1029"><img src="https://picsum.photos/id/1029/480/270" alt="Park towers haze" width="480" height="340"></figure><figure data-id="wp-188"><img src="https://picsum.photos/id/188/220/390" alt="Snow rooftops" width="191" height="340"></figure><figure data-id="wp-322"><img src="https://picsum.photos/id/322/220/390" alt="Ochre alley" width="191" height="340"></figure><figure data-id="wp-868"><img src="https://picsum.photos/id/868/320/266" alt="Skyline fade" width="320" height="340" loading="lazy"></figure><figure data-id="wp-299" class="is-lit"><img src="https://picsum.photos/id/299/220/390" alt="Brick canyon" width="191" height="340" loading="lazy"></figure><figure data-id="wp-288"><img src="https://picsum.photos/id/288/480/270" alt="Waterfront pastels" width="480" height="340" loading="lazy"></figure><figure data-id="wp-344"><img src="https://picsum.photos/id/344/480/270" alt="Gold water glass" width="480" height="340" loading="lazy"></figure><figure data-id="wp-49"><img src="https://picsum.photos/id/49/220/390" alt="Windmill white" width="191" height="340" loading="lazy"></figure><figure data-id="wp-1015"><img src="https://picsum.photos/id/1015/220/390" alt="Fog ridge" width="191" height="340" loading="lazy"></figure><figure data-id="wp-1016"><img src="https://picsum.photos/id/1016/480/270" alt="Sea cliffs" width="480" height="340" loading="lazy"></figure><figure data-id="wp-1018"><img src="https://picsum.photos/id/1018/220/390" alt="Night rails" width="191" height="340" loading="lazy"></figure><figure data-id="wp-1019"><img src="https://picsum.photos/id/1019/320/266" alt="Forest mist" width="320" height="340" loading="lazy"></figure><figure data-id="wp-1036"><img src="https://picsum.photos/id/1036/480/270" alt="Pier lights" width="480" height="340" loading="lazy"></figure><figure data-id="wp-1040"><img src="https://picsum.photos/id/1040/220/390" alt="Mountain shelf" width="191" height="340" loading="lazy"></figure>
+    </div>
+    <p class="hero-strip-caption" id="stripCaption" aria-live="polite">Brick canyon</p>
+  </div>
+  <div class="hero-bottom">
+    <p class="muted">Drag the lit strip, then filter the sheet below.</p>
+    <a class="btn" href="#find">Find a wallpaper</a>
+  </div>
 </header>
 
-<section class="hero" id="top" aria-labelledby="hero-h">
-  <div class="hero-row">
-    <div class="hero-copy">
-      <div class="hero-copy-main">
-        <h1 id="hero-h">Batch Light wallpapers</h1>
-        <p class="hero-support">Visitor drawer for phone, desktop and foldable lock screens from one published batch. Search, open, download by ratio.</p>
-      </div>
-      <div class="hero-aside">
-        <span class="batch-stamp" id="batchStamp">Batch</span>
-        <button type="button" class="btn" id="heroBrowse">Browse the sheet</button>
-      </div>
-    </div>
-    <figure class="hero-visual">
-      <img id="heroVisual" src="assets/mvp1_mock-llm-01.png" width="1200" height="900" alt="Sample frame from the batch">
-    </figure>
-  </div>
-</section>
-
 <section class="filters reveal" id="find" aria-labelledby="find-h">
-  <h2 class="rise" id="find-h">Search this batch</h2>
+  <h2 class="rise" id="find-h">Find a wallpaper</h2>
   <div class="filter-row rise">
     <label class="filter-label" for="q">Search</label>
-    <input class="search" id="q" type="search" placeholder="Search" autocomplete="off">
+    <input class="search" id="q" type="search" placeholder="Title, style, device…" autocomplete="off">
   </div>
   <div class="filter-row rise" role="group" aria-label="Popular devices" id="deviceChips">
     <span class="filter-label">Device</span>
+<button type="button" class="chip" data-device="iphone" aria-pressed="false">iPhone</button>
+    <button type="button" class="chip" data-device="pixel" aria-pressed="false">Pixel</button>
+    <button type="button" class="chip" data-device="foldable" aria-pressed="false">Fold</button>
   </div>
   <div class="facets rise">
     <div class="facet-group" role="group" aria-label="Style">
       <span class="filter-label">Style</span>
-      <button type="button" class="chip" data-style="dark" aria-pressed="false">Dark</button>
+<button type="button" class="chip" data-style="dark" aria-pressed="false">Dark</button>
       <button type="button" class="chip" data-style="minimal" aria-pressed="false">Minimal</button>
       <button type="button" class="chip" data-style="nature" aria-pressed="false">Nature</button>
       <button type="button" class="chip" data-style="abstract" aria-pressed="false">Abstract</button>
     </div>
     <div class="facet-group" role="group" aria-label="Ratio">
       <span class="filter-label">Ratio</span>
-      <button type="button" class="chip" data-ratio="phone-portrait" aria-pressed="false">Phone</button>
+<button type="button" class="chip" data-ratio="phone-portrait" aria-pressed="false">Phone</button>
       <button type="button" class="chip" data-ratio="desktop" aria-pressed="false">Desktop</button>
       <button type="button" class="chip" data-ratio="foldable" aria-pressed="false">Foldable</button>
     </div>
   </div>
-  <p class="count-line rise" id="countLine" aria-live="polite"></p>
+  <p class="count-line rise" id="countLine" aria-live="polite">24 of 24 frames in view</p>
 </section>
 
 <section class="sheet reveal" id="sheet" aria-labelledby="sheet-h">
   <h2 class="sr-only" id="sheet-h">Contact sheet</h2>
-  <div class="sheet-grid" id="sheetGrid"></div>
+  <div class="sheet-grid" id="sheetGrid">
+<figure class="frame" tabindex="0" role="button" data-id="wp-1029" aria-label="Open Park towers haze"><img src="https://picsum.photos/id/1029/480/270" alt="Park towers haze" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-188" aria-label="Open Snow rooftops"><img src="https://picsum.photos/id/188/360/640" alt="Snow rooftops" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-322" aria-label="Open Ochre alley"><img src="https://picsum.photos/id/322/360/640" alt="Ochre alley" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-868" aria-label="Open Skyline fade"><img src="https://picsum.photos/id/868/420/350" alt="Skyline fade" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-299" aria-label="Open Brick canyon"><img src="https://picsum.photos/id/299/360/640" alt="Brick canyon" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-288" aria-label="Open Waterfront pastels"><img src="https://picsum.photos/id/288/480/270" alt="Waterfront pastels" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-344" aria-label="Open Gold water glass"><img src="https://picsum.photos/id/344/480/270" alt="Gold water glass" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-49" aria-label="Open Windmill white"><img src="https://picsum.photos/id/49/360/640" alt="Windmill white" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1015" aria-label="Open Fog ridge"><img src="https://picsum.photos/id/1015/360/640" alt="Fog ridge" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1016" aria-label="Open Sea cliffs"><img src="https://picsum.photos/id/1016/480/270" alt="Sea cliffs" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1018" aria-label="Open Night rails"><img src="https://picsum.photos/id/1018/360/640" alt="Night rails" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1019" aria-label="Open Forest mist"><img src="https://picsum.photos/id/1019/420/350" alt="Forest mist" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1036" aria-label="Open Pier lights"><img src="https://picsum.photos/id/1036/480/270" alt="Pier lights" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1040" aria-label="Open Mountain shelf"><img src="https://picsum.photos/id/1040/360/640" alt="Mountain shelf" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1043" aria-label="Open River bend"><img src="https://picsum.photos/id/1043/420/350" alt="River bend" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1044" aria-label="Open Soft dunes"><img src="https://picsum.photos/id/1044/360/640" alt="Soft dunes" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1050" aria-label="Open Blue hour bay"><img src="https://picsum.photos/id/1050/480/270" alt="Blue hour bay" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1060" aria-label="Open Stone path"><img src="https://picsum.photos/id/1060/360/640" alt="Stone path" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1074" aria-label="Open Glass atrium"><img src="https://picsum.photos/id/1074/420/350" alt="Glass atrium" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1080" aria-label="Open Valley road"><img src="https://picsum.photos/id/1080/480/270" alt="Valley road" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-1084" aria-label="Open Quiet harbour"><img src="https://picsum.photos/id/1084/360/640" alt="Quiet harbour" width="68" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-110" aria-label="Open Wheat field"><img src="https://picsum.photos/id/110/480/270" alt="Wheat field" width="213" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-129" aria-label="Open Concrete fold"><img src="https://picsum.photos/id/129/420/350" alt="Concrete fold" width="144" height="120" loading="lazy"></figure>
+    <figure class="frame" tabindex="0" role="button" data-id="wp-137" aria-label="Open Ink geometry"><img src="https://picsum.photos/id/137/360/640" alt="Ink geometry" width="68" height="120" loading="lazy"></figure>
+  </div>
   <p class="empty" id="emptyMsg" hidden>This batch does not have that yet. Try another device or clear the search.</p>
 </section>
 
-<section class="index-list reveal" id="index" aria-labelledby="index-h">
-  <h2 class="rise" id="index-h">Phone frames</h2>
-  <div class="index-col">
-    <div id="indexGroups"></div>
-    <div class="index-preview" id="indexPreview" aria-hidden="true">
-      <img id="indexPreviewImg" alt="">
-    </div>
-  </div>
-</section>
-
 <section class="quiet-strip reveal" aria-labelledby="quiet-h">
-  <h2 class="strip-title rise" id="quiet-h">Gallery strip <span class="muted" id="quietCount"></span></h2>
-  <div class="quiet-row" id="quietRow"></div>
+  <h2 class="strip-title rise" id="quiet-h">Phone frames <span class="muted" id="quietCount">11</span></h2>
+  <div class="quiet-row" id="quietRow">
+<figure data-id="wp-188"><img src="https://picsum.photos/id/188/360/640" alt="Snow rooftops" loading="lazy"></figure>
+    <figure data-id="wp-322"><img src="https://picsum.photos/id/322/360/640" alt="Ochre alley" loading="lazy"></figure>
+    <figure data-id="wp-299"><img src="https://picsum.photos/id/299/360/640" alt="Brick canyon" loading="lazy"></figure>
+    <figure data-id="wp-49"><img src="https://picsum.photos/id/49/360/640" alt="Windmill white" loading="lazy"></figure>
+    <figure data-id="wp-1015"><img src="https://picsum.photos/id/1015/360/640" alt="Fog ridge" loading="lazy"></figure>
+    <figure data-id="wp-1018"><img src="https://picsum.photos/id/1018/360/640" alt="Night rails" loading="lazy"></figure>
+    <figure data-id="wp-1040"><img src="https://picsum.photos/id/1040/360/640" alt="Mountain shelf" loading="lazy"></figure>
+    <figure data-id="wp-1044"><img src="https://picsum.photos/id/1044/360/640" alt="Soft dunes" loading="lazy"></figure>
+    <figure data-id="wp-1060"><img src="https://picsum.photos/id/1060/360/640" alt="Stone path" loading="lazy"></figure>
+    <figure data-id="wp-1084"><img src="https://picsum.photos/id/1084/360/640" alt="Quiet harbour" loading="lazy"></figure>
+    <figure data-id="wp-137"><img src="https://picsum.photos/id/137/360/640" alt="Ink geometry" loading="lazy"></figure>
+  </div>
 </section>
 
 <section class="showcase reveal" aria-labelledby="show-h">
   <div class="showcase-meta">
     <h2 id="show-h">One lifted</h2>
     <a href="#sheet">Back to sheet</a>
-    <p class="showcase-note" id="showNote">A closer look at one frame from the batch. Same file you download.</p>
+    <p class="showcase-note" id="showNote">Brick canyon — Dark, Phone.</p>
   </div>
   <div>
-    <div class="showcase-run" id="showRun"></div>
-  </div>
-</section>
-
-<section class="about reveal" id="about" aria-labelledby="about-h">
-  <div class="about-grid">
-    <img class="portrait rise" src="assets/mvp1_mock-llm-02.png" width="640" height="800" alt="Frame from the published batch" loading="lazy">
-    <div>
-      <h2 class="rise" id="about-h">About this batch</h2>
-      <p class="about-body rise"><strong>Batch Light</strong> is the drawer for this wallpaper batch.</p>
-      <p class="about-follow rise">Phone, desktop and foldable frames from an own-model validation run. Open a frame, check ratio and tags, then download.</p>
-      <ul class="about-facts rise">
-        <li>No account</li>
-        <li>Download by ratio</li>
-        <li>One published batch</li>
-      </ul>
+    <div class="showcase-run" id="showRun">
+<div><figure data-id="wp-1029"><img src="https://picsum.photos/id/1029/480/270" alt="Park towers haze" loading="lazy"></figure><div class="frame-cap"><span>Park towers haze</span><span>desktop</span></div></div>
+      <div><figure data-id="wp-322"><img src="https://picsum.photos/id/322/220/390" alt="Ochre alley" loading="lazy"></figure><div class="frame-cap"><span>Ochre alley</span><span>phone</span></div></div>
+      <div><figure data-id="wp-299" class="is-lifted"><img src="https://picsum.photos/id/299/220/390" alt="Brick canyon" loading="lazy"></figure><div class="frame-cap"><span>Brick canyon</span><span>phone</span></div></div>
+      <div><figure data-id="wp-288"><img src="https://picsum.photos/id/288/480/270" alt="Waterfront pastels" loading="lazy"></figure><div class="frame-cap"><span>Waterfront pastels</span><span>desktop</span></div></div>
+      <div><figure data-id="wp-1015"><img src="https://picsum.photos/id/1015/220/390" alt="Fog ridge" loading="lazy"></figure><div class="frame-cap"><span>Fog ridge</span><span>phone</span></div></div>
+      <div><figure data-id="wp-1016"><img src="https://picsum.photos/id/1016/480/270" alt="Sea cliffs" loading="lazy"></figure><div class="frame-cap"><span>Sea cliffs</span><span>desktop</span></div></div>
+      <div><figure data-id="wp-1018"><img src="https://picsum.photos/id/1018/220/390" alt="Night rails" loading="lazy"></figure><div class="frame-cap"><span>Night rails</span><span>phone</span></div></div>
     </div>
   </div>
 </section>
 
-<footer class="footer-tiles" aria-label="Footer">
-  <div class="ftile statement">
-    <p class="lead">Wallpaper frames from one batch, laid out like a contact sheet.</p>
-    <p class="legal">© 2026 Batch Light. Draft UI only.</p>
+<section class="about reveal" id="about" aria-labelledby="about-h">
+  <div class="about-facts rise">
+    <span>Validation site</span>
+    <span>Since 2026</span>
+    <span>Own-model batch</span>
   </div>
-  <div class="ftile nav">
-    <nav aria-label="Footer">
-      <a href="#find">Find</a>
-      <a href="#sheet">Sheet</a>
-      <a href="#about">About</a>
-      <a href="privacy/">Privacy</a>
-      <a href="copyright/">Copyright</a>
-    </nav>
+  <div>
+    <h2 class="rise" id="about-h">About this batch</h2>
+    <p class="about-body rise">
+      <img class="portrait" src="https://picsum.photos/id/322/200/200" width="200" height="200" alt="" loading="lazy">
+      <strong>Batch Light</strong> is a wallpaper drawer for phone, desktop and foldable screens. Own-model pictures for a validation run — not a marketplace.
+    </p>
+    <p class="about-body soft rise">Open a frame, check ratio and tags, then download. Empty search means this batch does not have that yet.</p>
   </div>
-  <div class="ftile time">
-    <span class="small muted">Local time</span>
-    <span id="localTime" class="lead">—</span>
-  </div>
-  <div class="ftile mail">
-    <span class="small muted">Reach</span>
-    <a class="mail-a" href="mailto:hello@batchlight.example?subject=Batch%20Light">hello@batchlight.example</a>
-  </div>
-  <div class="ftile wordmark">
-    <span class="wm">Batch Light</span>
-  </div>
-  <a class="ftile invite" href="#find">
-    <span class="invite-copy">Open the sheet</span>
-    <svg class="arrow" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M6 14h14M14 6l8 8-8 8" stroke="currentColor" stroke-width="2"/>
-    </svg>
-  </a>
+</section>
+
+<div class="footer-space" aria-hidden="true"></div>
+<footer class="footer">
+  <span class="left">Wallpaper batch light</span>
+  <nav class="centre" aria-label="Footer">
+    <a href="#find">Find</a>
+    <a href="#sheet">Sheet</a>
+    <a href="#about">About</a>
+  </nav>
+  <span class="right">2026 · Sample picsum fills</span>
 </footer>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
@@ -922,421 +756,15 @@ h1, h2, h3 {
       <h2 id="lbTitle"></h2>
       <div class="attrs" id="lbAttrs"></div>
       <div class="lightbox-actions">
-        <a class="btn" id="lbDownload" href="#" download>Download</a>
+        <a class="btn" id="lbDownload" href="#">Download</a>
         <button type="button" class="btn btn-ghost" id="lbSave">Save wallpaper</button>
       </div>
     </div>
   </div>
 </div>
 
-<script src="wallpapers.js"></script>
-<script>
-(function () {
-  var src = window.T9_src;
-  var state = { q: "", device: null, styles: new Set(), ratios: new Set() };
-  var sheetGrid = document.getElementById("sheetGrid");
-  var emptyMsg = document.getElementById("emptyMsg");
-  var countLine = document.getElementById("countLine");
-  var lightbox = document.getElementById("lightbox");
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var data = [];
-  var batchId = "";
-
-  function matches(item) {
-    if (state.device && item.device_tags.indexOf(state.device) === -1) return false;
-    if (state.styles.size) {
-      var okS = false;
-      state.styles.forEach(function (s) { if (item.style === s) okS = true; });
-      if (!okS) return false;
-    }
-    if (state.ratios.size) {
-      var okR = false;
-      state.ratios.forEach(function (r) { if (item.ratio === r) okR = true; });
-      if (!okR) return false;
-    }
-    if (state.q) {
-      var tags = (item.tags || []).join(" ");
-      var hay = (item.title + " " + item.style + " " + item.ratio + " " + item.device_tags.join(" ") + " " + tags).toLowerCase();
-      if (hay.indexOf(state.q) === -1) return false;
-    }
-    return true;
-  }
-
-  function filtered() { return data.filter(matches); }
-
-  function fillLbAttrs(item) {
-    var root = document.getElementById("lbAttrs");
-    root.textContent = "";
-    function row(label, value) {
-      var div = document.createElement("div");
-      var strong = document.createElement("strong");
-      strong.textContent = label;
-      div.appendChild(strong);
-      div.appendChild(document.createTextNode(" " + value));
-      root.appendChild(div);
-    }
-    row("Ratio", item.ratio);
-    row("Style", item.style);
-    row("Devices", item.device_tags.join(", "));
-    row("Batch date", item.created_at || "—");
-    row("Id", item.id);
-  }
-
-  function downloadBlob(url, filename) {
-    return fetch(url, { mode: "cors", cache: "no-store" }).then(function (res) {
-      if (!res.ok) throw new Error("download fetch failed (" + res.status + ")");
-      return res.blob();
-    }).then(function (blob) {
-      var objectUrl = URL.createObjectURL(blob);
-      var a = document.createElement("a");
-      a.href = objectUrl;
-      a.download = filename;
-      a.rel = "noopener";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 4000);
-    });
-  }
-
-  function openLightbox(item) {
-    var fullUrl = src(item, "full");
-    var filename = item.id + (/\.png(\?|#|$)/i.test(fullUrl) ? ".png" : ".jpg");
-    document.getElementById("lbImg").src = fullUrl;
-    document.getElementById("lbImg").alt = item.title;
-    document.getElementById("lbTitle").textContent = item.title;
-    fillLbAttrs(item);
-    var dl = document.getElementById("lbDownload");
-    dl.href = fullUrl;
-    dl.setAttribute("download", filename);
-    dl.onclick = function (e) {
-      e.preventDefault();
-      downloadBlob(fullUrl, filename).catch(function (err) {
-        console.error(err);
-        window.open(fullUrl, "_blank", "noopener");
-      });
-    };
-    document.getElementById("lbSave").onclick = function () {
-      downloadBlob(fullUrl, filename).catch(function (err) {
-        console.error(err);
-        window.open(fullUrl, "_blank", "noopener");
-      });
-    };
-    lightbox.hidden = false;
-    lightbox.classList.add("is-open");
-    document.getElementById("lbClose").focus();
-  }
-  function closeLightbox() {
-    lightbox.classList.remove("is-open");
-    lightbox.hidden = true;
-  }
-  document.getElementById("lbClose").addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
-  });
-
-  function renderSheet() {
-    var list = filtered();
-    sheetGrid.innerHTML = "";
-    emptyMsg.hidden = list.length > 0;
-    var stamp = batchId ? '<span class="stamp">' + batchId + '</span>' : "";
-    countLine.innerHTML = stamp + "<span>" + list.length + " of " + data.length + " frames in view</span>";
-    list.forEach(function (item) {
-      var fig = document.createElement("figure");
-      fig.className = "frame";
-      fig.tabIndex = 0;
-      fig.setAttribute("role", "button");
-      fig.setAttribute("aria-label", "Open " + item.title);
-      var img = document.createElement("img");
-      img.src = src(item, "thumb");
-      img.alt = item.title;
-      img.width = item.ratio === "phone-portrait" ? 63 : item.ratio === "foldable" ? 134 : 200;
-      img.height = 112;
-      img.loading = "lazy";
-      fig.appendChild(img);
-      fig.addEventListener("click", function () { openLightbox(item); });
-      fig.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(item); }
-      });
-      sheetGrid.appendChild(fig);
-    });
-  }
-
-  function buildQuiet() {
-    var phones = data.filter(function (d) { return d.ratio === "phone-portrait"; });
-    document.getElementById("quietCount").textContent = "(" + phones.length + ")";
-    var quietRow = document.getElementById("quietRow");
-    quietRow.innerHTML = "";
-    phones.forEach(function (item) {
-      var fig = document.createElement("figure");
-      var img = document.createElement("img");
-      img.src = src(item, "thumb");
-      img.alt = item.title;
-      img.loading = "lazy";
-      fig.appendChild(img);
-      fig.addEventListener("click", function () { openLightbox(item); });
-      quietRow.appendChild(fig);
-    });
-  }
-
-  function buildIndex() {
-    var phones = data.filter(function (d) { return d.ratio === "phone-portrait"; });
-    var root = document.getElementById("indexGroups");
-    var preview = document.getElementById("indexPreview");
-    var previewImg = document.getElementById("indexPreviewImg");
-    var listSec = document.getElementById("index");
-    root.innerHTML = "";
-    if (phones[0]) {
-      preview.classList.add("is-on");
-      previewImg.src = src(phones[0], "strip");
-      previewImg.alt = phones[0].title;
-    }
-    var byStyle = {};
-    phones.forEach(function (item) {
-      var k = item.style || "other";
-      if (!byStyle[k]) byStyle[k] = [];
-      byStyle[k].push(item);
-    });
-    Object.keys(byStyle).sort().forEach(function (style) {
-      var group = document.createElement("div");
-      group.className = "index-group";
-      var label = document.createElement("div");
-      label.className = "index-group-label";
-      label.textContent = style.charAt(0).toUpperCase() + style.slice(1);
-      group.appendChild(label);
-      byStyle[style].forEach(function (item) {
-        var row = document.createElement("div");
-        row.className = "index-row";
-        row.tabIndex = 0;
-        row.setAttribute("role", "button");
-        row.setAttribute("aria-label", "Open " + item.title);
-        var left = document.createElement("div");
-        left.className = "index-row-left";
-        var dot = document.createElement("img");
-        dot.className = "index-dot";
-        dot.src = src(item, "thumb");
-        dot.alt = "";
-        dot.width = 16;
-        dot.height = 16;
-        var name = document.createElement("span");
-        name.className = "index-name";
-        name.textContent = item.title;
-        left.appendChild(dot);
-        left.appendChild(name);
-        var val = document.createElement("span");
-        val.className = "index-value";
-        val.textContent = item.created_at || item.id;
-        row.appendChild(left);
-        row.appendChild(val);
-        function show() {
-          listSec.classList.add("is-previewing");
-          preview.classList.add("is-on");
-          previewImg.src = src(item, "strip");
-          previewImg.alt = item.title;
-        }
-        function hide() {
-          listSec.classList.remove("is-previewing");
-          preview.classList.remove("is-on");
-        }
-        row.addEventListener("mouseenter", show);
-        row.addEventListener("mouseleave", hide);
-        row.addEventListener("focus", show);
-        row.addEventListener("blur", hide);
-        row.addEventListener("click", function () { openLightbox(item); });
-        row.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(item); }
-        });
-        group.appendChild(row);
-      });
-      root.appendChild(group);
-    });
-  }
-
-  function buildShowcase() {
-    var showItems = data.filter(function (d) { return d.style === "dark" || d.style === "nature"; }).slice(0, 7);
-    var showRun = document.getElementById("showRun");
-    showRun.innerHTML = "";
-    showItems.forEach(function (item, i) {
-      var wrap = document.createElement("div");
-      var fig = document.createElement("figure");
-      if (i === 2) fig.classList.add("is-lifted");
-      var img = document.createElement("img");
-      img.src = src(item, "strip");
-      img.alt = item.title;
-      img.loading = "lazy";
-      fig.appendChild(img);
-      fig.addEventListener("click", function () { openLightbox(item); });
-      wrap.appendChild(fig);
-      var cap = document.createElement("div");
-      cap.className = "frame-cap";
-      var ratioShort = item.ratio === "phone-portrait" ? "phone" : item.ratio;
-      var spanTitle = document.createElement("span");
-      spanTitle.textContent = item.title;
-      var spanRatio = document.createElement("span");
-      spanRatio.textContent = ratioShort;
-      cap.appendChild(spanTitle);
-      cap.appendChild(spanRatio);
-      wrap.appendChild(cap);
-      showRun.appendChild(wrap);
-    });
-    if (showItems[2]) document.getElementById("showNote").textContent = showItems[2].title + ". " + showItems[2].style + ", " + showItems[2].ratio + ".";
-  }
-
-  function bindFilters() {
-    document.getElementById("q").addEventListener("input", function (e) {
-      state.q = e.target.value.trim().toLowerCase();
-      renderSheet();
-    });
-    document.querySelectorAll("[data-style]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var v = btn.getAttribute("data-style");
-        var on = btn.getAttribute("aria-pressed") === "true";
-        btn.setAttribute("aria-pressed", on ? "false" : "true");
-        if (on) state.styles.delete(v); else state.styles.add(v);
-        renderSheet();
-      });
-    });
-    document.querySelectorAll("[data-ratio]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var v = btn.getAttribute("data-ratio");
-        var on = btn.getAttribute("aria-pressed") === "true";
-        btn.setAttribute("aria-pressed", on ? "false" : "true");
-        if (on) state.ratios.delete(v); else state.ratios.add(v);
-        renderSheet();
-      });
-    });
-  }
-
-  function mountDeviceChips(devices) {
-    var row = document.getElementById("deviceChips");
-    devices.forEach(function (dev) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "chip";
-      btn.setAttribute("data-device", dev.id);
-      btn.setAttribute("aria-pressed", "false");
-      btn.textContent = dev.label || dev.id;
-      btn.addEventListener("click", function () {
-        var v = btn.getAttribute("data-device");
-        var on = btn.getAttribute("aria-pressed") === "true";
-        row.querySelectorAll("[data-device]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
-        if (!on) { btn.setAttribute("aria-pressed", "true"); state.device = v; }
-        else state.device = null;
-        renderSheet();
-      });
-      row.appendChild(btn);
-    });
-  }
-
-  function entrances() {
-    if (!reduce && "IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
-    } else {
-      document.querySelectorAll(".reveal, .rise").forEach(function (el) {
-        el.classList.add("is-in");
-        el.style.opacity = "1";
-        el.style.transform = "none";
-      });
-    }
-  }
-
-  function tickTime() {
-    try {
-      var fmt = new Intl.DateTimeFormat(undefined, { hour: "2-digit", minute: "2-digit", timeZoneName: "short" });
-      document.getElementById("localTime").textContent = fmt.format(new Date());
-    } catch (e) {
-      document.getElementById("localTime").textContent = new Date().toLocaleTimeString();
-    }
-  }
-
-  function boot(items, devices, doc) {
-    data = items;
-    batchId = (doc && doc.batch_id) || (items[0] && items[0].batch_id) || "";
-  
-  var THEME_KEY = "batch-light-theme";
-  function currentTheme() {
-    var t = document.documentElement.getAttribute("data-theme");
-    if (t === "light" || t === "dark") return t;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-  function applyTheme(theme, persist) {
-    if (theme !== "light" && theme !== "dark") return;
-    document.documentElement.setAttribute("data-theme", theme);
-    document.documentElement.style.colorScheme = theme;
-    if (persist) {
-      try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
-    }
-    var btn = document.getElementById("themeToggle");
-    var state = document.getElementById("themeState");
-    var isDark = theme === "dark";
-    if (state) state.textContent = isDark ? "暗色 · Dark" : "浅色 · Light";
-    if (btn) {
-      btn.setAttribute("aria-pressed", isDark ? "true" : "false");
-      btn.setAttribute(
-        "aria-label",
-        isDark ? "Theme: Dark. Switch to light." : "Theme: Light. Switch to dark."
-      );
-    }
-  }
-  function toggleTheme() {
-    applyTheme(currentTheme() === "dark" ? "light" : "dark", true);
-  }
-  applyTheme(currentTheme(), false);
-  var themeBtn = document.getElementById("themeToggle");
-  if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
-  try {
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-      var stored = null;
-      try { stored = localStorage.getItem(THEME_KEY); } catch (err) {}
-      if (stored === "light" || stored === "dark") return;
-      applyTheme(e.matches ? "dark" : "light", false);
-    });
-  } catch (e) {}
-
-  document.getElementById("batchStamp").textContent = batchId || "Batch";
-    document.getElementById("topMeta").textContent = (batchId ? batchId + " · " : "") + items.length + " published frames";
-    var heroItem = items.find(function (it) { return it.ratio === "desktop"; }) || items[0];
-    if (heroItem) {
-      var hv = document.getElementById("heroVisual");
-      hv.src = src(heroItem, "hero-half");
-      hv.alt = heroItem.title;
-    }
-    mountDeviceChips(devices);
-    buildQuiet();
-    buildIndex();
-    buildShowcase();
-    bindFilters();
-    sheetGrid.addEventListener("mouseenter", function () { sheetGrid.parentElement.classList.add("is-dimming"); }, true);
-    sheetGrid.addEventListener("mouseleave", function () { sheetGrid.parentElement.classList.remove("is-dimming"); });
-    renderSheet();
-    entrances();
-    tickTime();
-    setInterval(tickTime, 30000);
-  }
-
-  Promise.all([
-    fetch("data/wallpapers.json", { cache: "no-store" }).then(function (r) {
-      if (!r.ok) throw new Error("manifest " + r.status);
-      return r.json();
-    }),
-    window.T9_loadDevices("config/devices.json")
-  ]).then(function (pair) {
-    var doc = pair[0];
-    var items = window.T9_publishedOnly(Array.isArray(doc) ? doc : (doc.items || []));
-    boot(items, pair[1], doc);
-  }).catch(function (err) {
-    countLine.textContent = "Could not load this batch. Serve this folder over http.";
-    emptyMsg.hidden = false;
-    emptyMsg.textContent = "This batch did not load. Open via a local server, not as a file:// page.";
-    console.error(err);
-  });
-})();
-</script>
+<script type="application/json" id="app-data">{"lang":"en","strings":{"meta.title":"Batch Light — phone, desktop and foldable wallpapers","meta.description":"Phone, desktop and foldable wallpapers in one darkroom batch: search the contact sheet, open a frame, download the same file.","skip.link":"Skip to wallpapers","lang.aria":"Language","hero.support":"Phone, desktop and foldable wallpapers in one darkroom batch.","hero.about":"About","hero.stripAria":"Featured wallpapers, drag sideways","hero.stripHint":"Drag the lit strip, then filter the sheet below.","hero.cta":"Find a wallpaper","find.heading":"Find a wallpaper","find.searchLabel":"Search","find.searchPlaceholder":"Title, style, device…","find.devicesAria":"Popular devices","find.deviceLabel":"Device","find.styleAria":"Style","find.styleLabel":"Style","find.ratioAria":"Ratio","find.ratioLabel":"Ratio","find.count":"{visible} of {total} frames in view","style.dark":"Dark","style.minimal":"Minimal","style.nature":"Nature","style.abstract":"Abstract","ratio.phone-portrait":"Phone","ratio.desktop":"Desktop","ratio.foldable":"Foldable","ratioShort.phone-portrait":"phone","ratioShort.desktop":"desktop","ratioShort.foldable":"foldable","device.iphone":"iPhone","device.pixel":"Pixel","device.foldable":"Fold","sheet.heading":"Contact sheet","sheet.empty":"This batch does not have that yet. Try another device or clear the search.","sheet.open":"Open {title}","quiet.heading":"Phone frames","showcase.heading":"One lifted","showcase.back":"Back to sheet","showcase.note":"A closer look at one frame from the batch — still the same file you download.","showcase.noteWith":"{title} — {style}, {ratio}.","about.fact.validation":"Validation site","about.fact.since":"Since 2026","about.fact.batch":"Own-model batch","about.heading":"About this batch","about.brand":"Batch Light","about.body1":"is a wallpaper drawer for phone, desktop and foldable screens. Own-model pictures for a validation run — not a marketplace.","about.body2":"Open a frame, check ratio and tags, then download. Empty search means this batch does not have that yet.","footer.left":"Wallpaper batch light","footer.navAria":"Footer","footer.find":"Find","footer.sheet":"Sheet","footer.about":"About","footer.right":"2026 · Sample picsum fills","lb.close":"Close","lb.ratio":"Ratio","lb.style":"Style","lb.devices":"Devices","lb.date":"Batch date","lb.id":"Id","lb.download":"Download","lb.save":"Save wallpaper","lb.downloadFailed":"{title} · download failed, try again","error.loadTitle":"Could not load this batch. Serve the folder over http (python -m http.server).","error.loadBody":"This batch did not load. Open via a local server, not as a file:// page."},"items":[{"id":"wp-1029","title":"Park towers haze","alt":"Park towers haze","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["city","haze"],"created_at":"2026-10-12","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1029/480/270","strip":"https://picsum.photos/id/1029/480/270","full":"https://picsum.photos/id/1029/1600/900"},"download_filename":"wp-1029.jpg","thumbW":213,"search":"park towers haze wp-1029 公园高楼薄雾 city haze 城市 薄雾 高楼 公园 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-188","title":"Snow rooftops","alt":"Snow rooftops","ratio":"phone-portrait","style":"minimal","device_tags":["iphone","pixel"],"tags":["snow","roof"],"created_at":"2026-10-12","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/188/360/640","strip":"https://picsum.photos/id/188/220/390","full":"https://picsum.photos/id/188/900/1600"},"download_filename":"wp-188.jpg","thumbW":68,"search":"snow rooftops wp-188 落雪的屋顶 snow roof 雪 屋顶 冬日 minimal 极简 phone 手机 iphone pixel iphone iphone pixel pixel"},{"id":"wp-322","title":"Ochre alley","alt":"Ochre alley","ratio":"phone-portrait","style":"dark","device_tags":["iphone"],"tags":["alley"],"created_at":"2026-10-14","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/322/360/640","strip":"https://picsum.photos/id/322/220/390","full":"https://picsum.photos/id/322/900/1600"},"download_filename":"wp-322.jpg","thumbW":68,"search":"ochre alley wp-322 赭色小巷 alley 小巷 赭色 街道 dark 暗色 phone 手机 iphone iphone iphone"},{"id":"wp-868","title":"Skyline fade","alt":"Skyline fade","ratio":"foldable","style":"minimal","device_tags":["foldable","pixel"],"tags":["skyline"],"created_at":"2026-10-14","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/868/420/350","strip":"https://picsum.photos/id/868/320/266","full":"https://picsum.photos/id/868/1200/1000"},"download_filename":"wp-868.jpg","thumbW":144,"search":"skyline fade wp-868 天际线渐隐 skyline 天际线 城市 远景 minimal 极简 foldable 折叠屏 foldable pixel fold 折叠屏 pixel pixel"},{"id":"wp-299","title":"Brick canyon","alt":"Brick canyon","ratio":"phone-portrait","style":"dark","device_tags":["pixel","iphone"],"tags":["brick"],"created_at":"2026-10-15","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/299/360/640","strip":"https://picsum.photos/id/299/220/390","full":"https://picsum.photos/id/299/900/1600"},"download_filename":"wp-299.jpg","thumbW":68,"search":"brick canyon wp-299 砖墙峡谷 brick 砖墙 峡谷 建筑 dark 暗色 phone 手机 pixel iphone pixel pixel iphone iphone"},{"id":"wp-288","title":"Waterfront pastels","alt":"Waterfront pastels","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["water"],"created_at":"2026-10-15","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/288/480/270","strip":"https://picsum.photos/id/288/480/270","full":"https://picsum.photos/id/288/1600/900"},"download_filename":"wp-288.jpg","thumbW":213,"search":"waterfront pastels wp-288 水岸粉彩 water 水岸 粉彩 柔和 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-344","title":"Gold water glass","alt":"Gold water glass","ratio":"desktop","style":"abstract","device_tags":["desktop"],"tags":["gold","glass"],"created_at":"2026-10-16","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/344/480/270","strip":"https://picsum.photos/id/344/480/270","full":"https://picsum.photos/id/344/1600/900"},"download_filename":"wp-344.jpg","thumbW":213,"search":"gold water glass wp-344 金水与玻璃 gold glass 金色 水面 玻璃 abstract 抽象 desktop 桌面 desktop desktop desktop"},{"id":"wp-49","title":"Windmill white","alt":"Windmill white","ratio":"phone-portrait","style":"minimal","device_tags":["iphone"],"tags":["windmill"],"created_at":"2026-10-16","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/49/360/640","strip":"https://picsum.photos/id/49/220/390","full":"https://picsum.photos/id/49/900/1600"},"download_filename":"wp-49.jpg","thumbW":68,"search":"windmill white wp-49 白色风车 windmill 风车 白色 minimal 极简 phone 手机 iphone iphone iphone"},{"id":"wp-1015","title":"Fog ridge","alt":"Fog ridge","ratio":"phone-portrait","style":"nature","device_tags":["iphone","pixel"],"tags":["fog"],"created_at":"2026-10-18","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1015/360/640","strip":"https://picsum.photos/id/1015/220/390","full":"https://picsum.photos/id/1015/900/1600"},"download_filename":"wp-1015.jpg","thumbW":68,"search":"fog ridge wp-1015 雾中山脊 fog 雾 山脊 山 nature 自然 phone 手机 iphone pixel iphone iphone pixel pixel"},{"id":"wp-1016","title":"Sea cliffs","alt":"Sea cliffs","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["sea","cliff"],"created_at":"2026-10-18","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1016/480/270","strip":"https://picsum.photos/id/1016/480/270","full":"https://picsum.photos/id/1016/1600/900"},"download_filename":"wp-1016.jpg","thumbW":213,"search":"sea cliffs wp-1016 海边悬崖 sea cliff 海 悬崖 海岸 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-1018","title":"Night rails","alt":"Night rails","ratio":"phone-portrait","style":"dark","device_tags":["pixel"],"tags":["night","rail"],"created_at":"2026-10-19","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1018/360/640","strip":"https://picsum.photos/id/1018/220/390","full":"https://picsum.photos/id/1018/900/1600"},"download_filename":"wp-1018.jpg","thumbW":68,"search":"night rails wp-1018 夜色铁轨 night rail 夜晚 铁轨 街道 dark 暗色 phone 手机 pixel pixel pixel"},{"id":"wp-1019","title":"Forest mist","alt":"Forest mist","ratio":"foldable","style":"nature","device_tags":["foldable"],"tags":["forest"],"created_at":"2026-10-19","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/1019/420/350","strip":"https://picsum.photos/id/1019/320/266","full":"https://picsum.photos/id/1019/1200/1000"},"download_filename":"wp-1019.jpg","thumbW":144,"search":"forest mist wp-1019 薄雾森林 forest 森林 雾 树林 nature 自然 foldable 折叠屏 foldable fold 折叠屏"},{"id":"wp-1036","title":"Pier lights","alt":"Pier lights","ratio":"desktop","style":"dark","device_tags":["desktop"],"tags":["pier"],"created_at":"2026-10-20","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1036/480/270","strip":"https://picsum.photos/id/1036/480/270","full":"https://picsum.photos/id/1036/1600/900"},"download_filename":"wp-1036.jpg","thumbW":213,"search":"pier lights wp-1036 码头灯火 pier 码头 灯光 夜晚 dark 暗色 desktop 桌面 desktop desktop desktop"},{"id":"wp-1040","title":"Mountain shelf","alt":"Mountain shelf","ratio":"phone-portrait","style":"minimal","device_tags":["iphone"],"tags":["mountain"],"created_at":"2026-10-20","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1040/360/640","strip":"https://picsum.photos/id/1040/220/390","full":"https://picsum.photos/id/1040/900/1600"},"download_filename":"wp-1040.jpg","thumbW":68,"search":"mountain shelf wp-1040 山脊台地 mountain 山 台地 山脊 minimal 极简 phone 手机 iphone iphone iphone"},{"id":"wp-1043","title":"River bend","alt":"River bend","ratio":"foldable","style":"nature","device_tags":["foldable","iphone"],"tags":["river"],"created_at":"2026-10-21","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/1043/420/350","strip":"https://picsum.photos/id/1043/320/266","full":"https://picsum.photos/id/1043/1200/1000"},"download_filename":"wp-1043.jpg","thumbW":144,"search":"river bend wp-1043 河流弯道 river 河流 转弯 水 nature 自然 foldable 折叠屏 foldable iphone fold 折叠屏 iphone iphone"},{"id":"wp-1044","title":"Soft dunes","alt":"Soft dunes","ratio":"phone-portrait","style":"abstract","device_tags":["pixel"],"tags":["dune"],"created_at":"2026-10-21","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1044/360/640","strip":"https://picsum.photos/id/1044/220/390","full":"https://picsum.photos/id/1044/900/1600"},"download_filename":"wp-1044.jpg","thumbW":68,"search":"soft dunes wp-1044 柔和沙丘 dune 沙丘 沙漠 柔和 abstract 抽象 phone 手机 pixel pixel pixel"},{"id":"wp-1050","title":"Blue hour bay","alt":"Blue hour bay","ratio":"desktop","style":"dark","device_tags":["desktop"],"tags":["bay"],"created_at":"2026-10-22","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1050/480/270","strip":"https://picsum.photos/id/1050/480/270","full":"https://picsum.photos/id/1050/1600/900"},"download_filename":"wp-1050.jpg","thumbW":213,"search":"blue hour bay wp-1050 蓝调海湾 bay 海湾 蓝调 傍晚 dark 暗色 desktop 桌面 desktop desktop desktop"},{"id":"wp-1060","title":"Stone path","alt":"Stone path","ratio":"phone-portrait","style":"minimal","device_tags":["iphone","pixel"],"tags":["path"],"created_at":"2026-10-22","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1060/360/640","strip":"https://picsum.photos/id/1060/220/390","full":"https://picsum.photos/id/1060/900/1600"},"download_filename":"wp-1060.jpg","thumbW":68,"search":"stone path wp-1060 石板小路 path 石板 小路 路径 minimal 极简 phone 手机 iphone pixel iphone iphone pixel pixel"},{"id":"wp-1074","title":"Glass atrium","alt":"Glass atrium","ratio":"foldable","style":"abstract","device_tags":["foldable"],"tags":["glass"],"created_at":"2026-10-24","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/1074/420/350","strip":"https://picsum.photos/id/1074/320/266","full":"https://picsum.photos/id/1074/1200/1000"},"download_filename":"wp-1074.jpg","thumbW":144,"search":"glass atrium wp-1074 玻璃中庭 glass 玻璃 中庭 建筑 abstract 抽象 foldable 折叠屏 foldable fold 折叠屏"},{"id":"wp-1080","title":"Valley road","alt":"Valley road","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["valley"],"created_at":"2026-10-24","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/1080/480/270","strip":"https://picsum.photos/id/1080/480/270","full":"https://picsum.photos/id/1080/1600/900"},"download_filename":"wp-1080.jpg","thumbW":213,"search":"valley road wp-1080 山谷公路 valley 山谷 公路 道路 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-1084","title":"Quiet harbour","alt":"Quiet harbour","ratio":"phone-portrait","style":"dark","device_tags":["iphone"],"tags":["harbour"],"created_at":"2026-10-25","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/1084/360/640","strip":"https://picsum.photos/id/1084/220/390","full":"https://picsum.photos/id/1084/900/1600"},"download_filename":"wp-1084.jpg","thumbW":68,"search":"quiet harbour wp-1084 安静港口 harbour 港口 安静 船 dark 暗色 phone 手机 iphone iphone iphone"},{"id":"wp-110","title":"Wheat field","alt":"Wheat field","ratio":"desktop","style":"nature","device_tags":["desktop"],"tags":["wheat"],"created_at":"2026-10-25","w":1600,"h":900,"img":{"thumb":"https://picsum.photos/id/110/480/270","strip":"https://picsum.photos/id/110/480/270","full":"https://picsum.photos/id/110/1600/900"},"download_filename":"wp-110.jpg","thumbW":213,"search":"wheat field wp-110 麦田 wheat 麦田 农田 金色 nature 自然 desktop 桌面 desktop desktop desktop"},{"id":"wp-129","title":"Concrete fold","alt":"Concrete fold","ratio":"foldable","style":"minimal","device_tags":["foldable","pixel"],"tags":["concrete"],"created_at":"2026-10-26","w":1200,"h":1000,"img":{"thumb":"https://picsum.photos/id/129/420/350","strip":"https://picsum.photos/id/129/320/266","full":"https://picsum.photos/id/129/1200/1000"},"download_filename":"wp-129.jpg","thumbW":144,"search":"concrete fold wp-129 混凝土折角 concrete 混凝土 折角 建筑 minimal 极简 foldable 折叠屏 foldable pixel fold 折叠屏 pixel pixel"},{"id":"wp-137","title":"Ink geometry","alt":"Ink geometry","ratio":"phone-portrait","style":"abstract","device_tags":["iphone","pixel"],"tags":["ink","geometry"],"created_at":"2026-10-26","w":900,"h":1600,"img":{"thumb":"https://picsum.photos/id/137/360/640","strip":"https://picsum.photos/id/137/220/390","full":"https://picsum.photos/id/137/900/1600"},"download_filename":"wp-137.jpg","thumbW":68,"search":"ink geometry wp-137 墨色几何 ink geometry 墨 几何 抽象 abstract 抽象 phone 手机 iphone pixel iphone iphone pixel pixel"}],"devices":[{"id":"iphone","label":"iPhone"},{"id":"pixel","label":"Pixel"},{"id":"foldable","label":"Fold"}],"styles":["dark","minimal","nature","abstract"],"ratios":["phone-portrait","desktop","foldable"],"selfPath":"/","otherPath":"/zh/","otherLang":"zh-Hans"}</script>
+<script src="/wallpapers.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>

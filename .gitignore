@@ -7,3 +7,4 @@ __pycache__/
 venv/
 *.tmp
 public/data/wallpapers.json.tmp
+.pi/

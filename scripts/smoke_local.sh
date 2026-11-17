@@ -63,25 +63,22 @@ if (!draft || draft.status !== "unlisted") { console.error("FAIL: wp-draft missi
 console.log("PASS publishedOnly: published=" + pub.length + " total=" + items.length + " excluded=wp-draft");
 ' "$JSON"
 
-# src() full-URL vs picsum
+# real wallpapers.js: img block wins, download name keeps the real extension
 node -e '
-function isFullImageUrl(url) {
-  if (!url || typeof url !== "string") return false;
-  if (!/^https?:\/\//i.test(url)) return false;
-  if (/r2\.dev/i.test(url)) return true;
-  if (/\.(jpe?g|png|webp)(\?|#|$)/i.test(url)) return true;
-  return false;
-}
-function src(item) {
-  var full = item.cdn_url_full || item.cdn_url_preview || (isFullImageUrl(item.cdn_url) ? item.cdn_url : null);
-  if (full) return full;
-  return (item.cdn_url || "") + "/" + (item.w||1600) + "/" + (item.h||900);
-}
-const r2 = src({cdn_url:"https://pub.example.r2.dev/wallpapers/a/x.png", w:100, h:100});
-const pic = src({cdn_url:"https://picsum.photos/id/1", w:1600, h:900});
-if (r2 !== "https://pub.example.r2.dev/wallpapers/a/x.png") { console.error("FAIL r2", r2); process.exit(1); }
-if (pic !== "https://picsum.photos/id/1/1600/900") { console.error("FAIL picsum", pic); process.exit(1); }
-console.log("PASS src() full URL vs picsum");
-'
+const fs = require("fs");
+const path = require("path");
+const root = process.argv[1];
+const win = { document: { getElementById: () => null } };
+new Function("window", fs.readFileSync(path.join(root, "wallpapers.js"), "utf8"))(win);
+const webp = { id: "paper-01", download_filename: "paper-01.webp",
+  img: { thumb: "https://img.example/t.webp", strip: "https://img.example/t.webp", full: "https://img.example/w/paper-01/hd-q95.webp" } };
+const picsum = { id: "wp-1029", download_filename: "wp-1029.jpg",
+  img: { thumb: "https://picsum.photos/id/1029/480/270", strip: "https://picsum.photos/id/1029/480/270", full: "https://picsum.photos/id/1029/1600/900" } };
+if (win.T9_src(webp, "full") !== webp.img.full) { console.error("FAIL src full"); process.exit(1); }
+if (win.T9_src(picsum, "thumb") !== picsum.img.thumb) { console.error("FAIL src thumb"); process.exit(1); }
+if (win.T9_downloadName(webp, webp.img.full) !== "paper-01.webp") { console.error("FAIL downloadName webp"); process.exit(1); }
+if (win.T9_downloadName(picsum, picsum.img.full) !== "wp-1029.jpg") { console.error("FAIL downloadName jpg"); process.exit(1); }
+console.log("PASS wallpapers.js src() + downloadName()");
+' "$ROOT/public"
 
 echo "smoke_local OK"

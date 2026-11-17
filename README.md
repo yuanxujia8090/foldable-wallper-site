@@ -8,12 +8,14 @@
 
 ```
 本地出图目录 → scripts/publish.py → Cloudflare R2（公开读）
-                              ↘ 更新 public/data/wallpapers.json
-访客浏览器 ← Cloudflare Pages（部署 public/）← JSON + 壳 HTML/JS
+                              ↘ public/data/wallpapers.json
+                                  ↘ scripts/build_pages.py → 页面 #app-data（items）
+访客浏览器 ← Cloudflare Pages（部署 public/）← 页面自带 data，不在运行时取 JSON
 ```
 
 - 无账号、无后端。管理员本机持有 `.env` 跑 CLI。
 - 访客只看见 `status === "published"`（或缺省）；`unlisted` 不下架删对象，只不进列表。
+- **改完数据必须重建页面**：`python3 scripts/build_pages.py`（`--check` 只看是否漂移）。页面里的 `items` 是构建产物，不重建就不会出现在站点上。
 
 ## Aaron 上线步骤
 

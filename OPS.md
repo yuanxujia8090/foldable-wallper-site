@@ -10,7 +10,14 @@
 .venv/bin/python scripts/publish.py --unpublish <id> --delete-object
 ```
 
-改完 JSON 后重新部署 Pages（或 Git push 触发）。
+改完 JSON 后**两步**：先重建页面，再重新部署 Pages（或 Git push 触发）。
+
+```bash
+python3 scripts/build_pages.py          # 把 items 写进 public/index.html 与 public/zh/index.html 的 #app-data
+python3 scripts/build_pages.py --check  # 只看是否漂移，退出码 1 = 页面落后于数据
+```
+
+目前已入库的条目不会重生成（`search` 索引是手写的），只追加新条目；中文字段从 `public/data/wallpapers.zh-Hans.json`（`{id: {title, alt, searchTerms}}`）取，缺则退回英文。
 
 ## 重跑失败上传
 

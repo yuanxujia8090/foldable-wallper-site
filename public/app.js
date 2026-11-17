@@ -276,7 +276,7 @@
     if (!item) return;
     if (!silent) lastTrigger = document.activeElement;
     var full = window.T9_src(item, "full");
-    var filename = item.download_filename || item.id + ".jpg";
+    var filename = window.T9_downloadName(item, full);
     els.lbImg.src = item.img.preview || full;
     els.lbImg.alt = item.alt || item.title || "";
     els.lbTitle.textContent = item.title;

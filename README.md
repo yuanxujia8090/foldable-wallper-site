@@ -15,7 +15,8 @@
 
 - 无账号、无后端。管理员本机持有 `.env` 跑 CLI。
 - 访客只看见 `status === "published"`（或缺省）；`unlisted` 不下架删对象，只不进列表。
-- **改完数据必须重建页面**：`python3 scripts/build_pages.py`（`--check` 只看是否漂移）。页面里的 `items` 是构建产物，不重建就不会出现在站点上。
+- **改完数据必须重建页面**：`python3 scripts/build_pages.py`（`--check` 只看是否漂移）。重建会写入六处生成物：页面里的 `items`、hero 亮条（14 张）、接触印样 `#sheetGrid` 的无脚本兜底（全部已发布）、`#showRun`（最新 7 张，第 3 张放大）、`#countLine` / `#showNote` 文案，以及 `robots.txt` / `sitemap.xml`。
+- 这四处图片都从已发布条目自动挑，按 `created_at` 新的优先；手动改会被下次 build 覆盖。构建时会拒绝写出仍含 `picsum.photos` 的页面。
 
 ## Aaron 上线步骤
 
@@ -66,7 +67,7 @@ npx wrangler pages deploy public --project-name=foldable-wallper-site
 
 或：Cloudflare Dashboard → Pages → Connect Git → 本仓 `main`，构建输出目录填 `public`（无构建命令）。
 
-部署后把 `public/robots.txt` / `sitemap.xml` 里的 `example.com` 换成真实域名。
+部署后确认 `public/config/site.json` 的 `origin` 是真实域名（`robots.txt` 与 `sitemap.xml` 都由它生成，不要手改这两个文件）。
 
 ### 6. 冒烟清单
 
@@ -84,6 +85,8 @@ npx wrangler pages deploy public --project-name=foldable-wallper-site
 cd public && python3 -m http.server 8765
 ```
 
+`public/config/site.json` 只有一个 `origin` 字段，`robots.txt` 与 `sitemap.xml` 由 `scripts/build_pages.py` 按它生成。换域名改这里，再跑一次 build。
+
 ## 数据形状（wallpapers.json item）
 
 `id, title, cdn_url, status (published|unlisted), w, h, ratio, style, device_tags[], tags[], created_at, batch_id, object_key`
@@ -94,6 +97,8 @@ cd public && python3 -m http.server 8765
 
 空仓首次可直接推 `main`（本 V1 即如此）。若走 PR：分支 `feat/v1-publish`，**draft** PR，描述写清「独立仓、Aaron 自管 CF，勿碰 website」。
 
-## 运维
+## 运维 / 上线
 
-见 [OPS.md](./OPS.md)。访客冒烟见 [SMOKE.md](./SMOKE.md)。
+- **首次上线操作手册：** [LAUNCH.md](./LAUNCH.md)（含未完成清单）
+- 日常运维：[OPS.md](./OPS.md)
+- 访客冒烟：[SMOKE.md](./SMOKE.md)

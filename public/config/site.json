@@ -1,0 +1,4 @@
+{
+  "origin": "https://unfoldpaper.com",
+  "notes": "Canonical site origin used for robots.txt + sitemap.xml by scripts/build_pages.py. Change here, rerun the build."
+}

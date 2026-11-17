@@ -18,7 +18,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-12",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -38,7 +38,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-12",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -56,7 +56,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-14",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -75,7 +75,7 @@
       "w": 1200,
       "h": 1000,
       "created_at": "2026-10-14",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -94,7 +94,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-15",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -112,7 +112,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-15",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -131,7 +131,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-16",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -149,7 +149,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-16",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -168,7 +168,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-18",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -187,7 +187,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-18",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -206,7 +206,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-19",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -224,7 +224,7 @@
       "w": 1200,
       "h": 1000,
       "created_at": "2026-10-19",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -242,7 +242,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-20",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -260,7 +260,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-20",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -279,7 +279,7 @@
       "w": 1200,
       "h": 1000,
       "created_at": "2026-10-21",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -297,7 +297,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-21",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -315,7 +315,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-22",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -334,7 +334,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-22",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -352,7 +352,7 @@
       "w": 1200,
       "h": 1000,
       "created_at": "2026-10-24",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -370,7 +370,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-24",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -388,7 +388,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-25",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -406,7 +406,7 @@
       "w": 1600,
       "h": 900,
       "created_at": "2026-10-25",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -425,7 +425,7 @@
       "w": 1200,
       "h": 1000,
       "created_at": "2026-10-26",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -445,7 +445,7 @@
       "w": 900,
       "h": 1600,
       "created_at": "2026-10-26",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "2026-10-28-a"
     },
     {
@@ -484,7 +484,7 @@
       "w": 5340,
       "h": 3756,
       "created_at": "2026-11-07",
-      "status": "published",
+      "status": "unlisted",
       "batch_id": "iphone-duo-local30-20261107",
       "download_filename": "mist-01.webp",
       "cdn_url_preview": "https://img.unfoldpaper.com/test-only/20261108/b301f216df4e4e708bb4bb6197ad6d9b/mist-01-hd-q95.webp",

@@ -326,6 +326,9 @@
     var startX = 0;
     var startLeft = 0;
     var moved = false;
+    /* Pointer capture retargets the following click at the strip itself, so remember
+       the frame the press started on and fall back to it. */
+    var downFigure = null;
 
     function updateLit() {
       var middle = strip.scrollLeft + strip.clientWidth / 2;
@@ -357,6 +360,7 @@
       moved = false;
       startX = event.clientX;
       startLeft = strip.scrollLeft;
+      downFigure = closest(event.target, "figure[data-id]");
       strip.classList.add("is-dragging");
       if (strip.setPointerCapture) strip.setPointerCapture(event.pointerId);
     });
@@ -375,13 +379,16 @@
     strip.addEventListener("pointercancel", endDrag);
 
     strip.addEventListener("click", function (event) {
+      var figure = closest(event.target, "figure[data-id]");
+      if (!figure) figure = downFigure;
+      downFigure = null;
       if (suppressClick) {
         suppressClick = false;
         return;
       }
-      var figure = closest(event.target, "figure[data-id]");
       if (!figure) return;
-      openLightbox(byId[figure.getAttribute("data-id")]);
+      var item = byId[figure.getAttribute("data-id")];
+      if (item) openLightbox(item);
     });
 
     updateLit();

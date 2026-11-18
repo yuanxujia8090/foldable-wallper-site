@@ -54,3 +54,15 @@ cd public && python3 -m http.server 8765
 ## 密钥
 
 `.env` 仅本机；已在 `.gitignore`。轮换 R2 Key 后更新 `.env`，旧 Key 在 CF 作废。
+
+## 改 R2 CORS
+
+仓里 `r2-cors.json` 是当前应生效的规则（主域 + `*.pages.dev` + 本机 8765）。改完适用就推上去，不要只在控制台改而不留档。
+
+```bash
+npx wrangler login
+npx wrangler r2 bucket cors set <bucket-name> --file r2-cors.json
+npx wrangler r2 bucket cors list <bucket-name>
+```
+
+核对：`curl -sI -H "Origin: https://unfoldpaper.com" <任一真图URL> | grep -i access-control`。

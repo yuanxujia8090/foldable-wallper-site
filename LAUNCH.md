@@ -46,7 +46,25 @@
 1. Bucket：文档约定名 `foldable-wallpapers`（以控制台实际为准）。
 2. **Public access** 已开；自定义域 **`img.unfoldpaper.com`** 指向该 bucket（已实测出图）。
 3. API Token：Object Read & Write → 记 Account ID / Access Key / Secret（填进 `.env`）。
-4. **CORS 要补**：现在只允许 `https://unfoldpaper.com`。若你还会用 `https://foldable-wallper-site.pages.dev` 预览，或想在本机 `http://127.0.0.1:8765` 验下载，需把这两个 origin 也加进 Allow-Origins，否则灯箱 Download（`fetch`→blob）会失败——不是代码问题。
+4. **CORS 要补**：现在只允许 `https://unfoldpaper.com`。要支持 `*.pages.dev` 预览域和本机 `http://127.0.0.1:8765` 验下载，用仓里的 `r2-cors.json`（包含主域、`https://*.pages.dev`、127.0.0.1 与 localhost），不要把主域那条删了。两条路选一：
+
+   - 控制台：R2 → bucket → Settings → CORS policy → 粘贴 `r2-cors.json` 全文 → Save。
+   - 命令行（需先 `npx wrangler login`）：
+
+     ```bash
+     npx wrangler r2 bucket cors set <bucket-name> --file r2-cors.json
+     npx wrangler r2 bucket cors list <bucket-name>   # 回读确认
+     ```
+
+   不改的后果：预览域与本机点 Download 会失败（`fetch`→blob 被浏览器跨源拦），正式域名不受影响。
+
+5. **核对方法**：
+
+   ```bash
+   curl -sI -H "Origin: https://unfoldpaper.com" "https://img.unfoldpaper.com/<任一真图URL>" | grep -i access-control
+   ```
+
+   回 `access-control-allow-origin: https://unfoldpaper.com` 才算对。
 
 ### 2.2 Pages（**尚未做，这是当前阻塞项**）
 
@@ -213,14 +231,14 @@ python3 scripts/build_pages.py
 | # | 问题 | 证据 / 位置 |
 |---|---|---|
 | 1 | **站点还没上线**：根域无 A/CNAME 记录，`www` 与 `*.pages.dev` 均 NXDOMAIN | 权威 DNS 查询（2026-11-17）；需按 §2.2 / §2.3 建 Pages 项目并绑域 |
-| 2 | **`hello@unfoldpaper.com` 还没建信箱** | `/privacy/`、`/copyright/` 已指向该地址；用 Cloudflare Email Routing 转发 |
+| 2 | **`hello@unfoldpaper.com` 还没建信箱** | `/privacy/`、`/copyright/` 已指向该地址。建法：Cloudflare Dashboard → Email → Email Routing → 启用（自动加 MX/TXT）→ Destination addresses 加你的真实信箱并收验证信 → Routing rules 把 `hello@unfoldpaper.com` 设成 Forward to 它。没做的话页面上那个地址收不到信 |
 | 3 | **本机无 `.env`**，本仓跑不了真上传 / 真下架 CLI | 缺文件；不影响静态站上线 |
 
 ### P1 — 上线当天应处理
 
 | # | 问题 | 说明 |
 |---|---|---|
-| 4 | **R2 CORS 只允许主域** | `*.pages.dev` 与本机预览的 Download 会失败（§2.1） |
+| 4 | **R2 CORS 只允许主域** | 仓里已备 `r2-cors.json`（含 `https://*.pages.dev`、`127.0.0.1:8765`、`localhost:8765`），按 §2.1 粘贴或 `wrangler r2 bucket cors set` 即可；没凭据时我做不了 |
 | 5 | **中文法律页缺失** | 中文页脚链到英文 `/privacy/` `/copyright/`；V1 可接受 |
 | 6 | **关于区块没有头像图** | 原 picsum 头像已删除，About 只剩文字；有真图再补 |
 | 7 | 死 CSS 未清 | 已删的「Phone frames」区块样式、机型/比例 chip 样式仍在 `<style>` 里，不影响渲染 |
@@ -246,12 +264,12 @@ python3 scripts/build_pages.py
 
 ## 7. 最短路径（现在只剩部署）
 
-1. 提交本轮改动（已含 29 张真图、品牌与页脚修订）。
+1. 本轮改动已提交并 push 到 `origin/main`（`eba0900`）。
 2. `npx wrangler login`（或 Dashboard 接 Git），建 Pages 项目 `foldable-wallper-site`。
 3. 绑 `unfoldpaper.com`（和 `www`），等 SSL Active。
 4. 干净网络打开 `/`、`/zh/`、`/privacy/`、`/copyright/`、`/robots.txt`、`/sitemap.xml`、`/favicon.svg`。
 5. 点一张图 → Download，确认落盘且地址栏仍在本站。
-6. 建 `hello@unfoldpaper.com` 转发。
-7. （可选）把 `*.pages.dev` 加进 R2 CORS，方便用预览域验下载。
+6. 建 `hello@unfoldpaper.com` 转发（§6 P0#2 有步骤）。
+7. 把 `r2-cors.json` 贴进 R2 CORS，方便用预览域验下载（§2.1）。
 
 卡在「域名打不开」时：先看 Cloudflare Pages 是否有成功 Deployment、Custom domain 是否 Active，再查本机是否开了 WARP/代理（`198.19.*` 很像）。

@@ -564,11 +564,6 @@ html[lang="zh-Hans"] h3 { letter-spacing: -0.02em; }
 }
 
 /* Motion entrances — only when JS is present, so content stays readable without it */
-.reveal.is-in { opacity: 1; transform: none; }
-.reveal.is-in .rise {
-  opacity: 1;
-  transform: none;
-}
 .js .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -578,6 +573,11 @@ html[lang="zh-Hans"] h3 { letter-spacing: -0.02em; }
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+.reveal.is-in .rise {
+  opacity: 1;
+  transform: none;
 }
 .rise:nth-child(1) { transition-delay: 0ms; }
 .rise:nth-child(2) { transition-delay: 70ms; }

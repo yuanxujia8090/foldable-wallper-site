@@ -22,7 +22,7 @@
 
 ### 1. Cloudflare R2
 
-1. 建 bucket（如 `foldable-wallpapers`）。
+1. 使用已有 bucket **`foldable`**（不要另建 `foldable-wallpapers`）。
 2. 开启 **Public access**（R2.dev subdomain 或自定义域）。
 3. 建 API Token：Object Read & Write，记下 Account ID / Access Key / Secret。
 
@@ -82,6 +82,7 @@ npx wrangler pages deploy public --project-name=foldable-wallper-site
 
 ```bash
 ./scripts/smoke_local.sh
+python3 tests/test_list_visibility_cascade.py   # 静态 cascade 回归，不能替代浏览器渲染验收
 cd public && python3 -m http.server 8765
 ```
 

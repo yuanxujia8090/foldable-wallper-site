@@ -61,8 +61,8 @@ cd public && python3 -m http.server 8765
 
 ```bash
 npx wrangler login
-npx wrangler r2 bucket cors set <bucket-name> --file r2-cors.json
-npx wrangler r2 bucket cors list <bucket-name>
+npx wrangler r2 bucket cors set foldable --file r2-cors.json
+npx wrangler r2 bucket cors list foldable
 ```
 
 核对：`curl -sI -H "Origin: https://unfoldpaper.com" <任一真图URL> | grep -i access-control`。
